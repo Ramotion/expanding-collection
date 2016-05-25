@@ -14,6 +14,7 @@ class PageCollectionLayout: UICollectionViewFlowLayout {
   
   var scalingOffset: CGFloat      = 200
   var minimumScaleFactor: CGFloat = 0.9
+  var minimumAlphaFactor: CGFloat = 0.3
   var scaleItems: Bool            = true
   
   required init?(coder aDecoder: NSCoder) {
@@ -123,6 +124,9 @@ extension PageCollectionLayout {
       let absDistanceFromCenter = min(abs(distanceFromCenter), self.scalingOffset)
       let scale = absDistanceFromCenter * (self.minimumScaleFactor - 1) / self.scalingOffset + 1
       $0.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
+      
+      let alpha = absDistanceFromCenter * (self.minimumAlphaFactor - 1) / self.scalingOffset + 1
+      $0.alpha = alpha
     }
    
     return newAttributesArray
