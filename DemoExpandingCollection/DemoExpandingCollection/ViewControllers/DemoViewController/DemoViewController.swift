@@ -114,6 +114,7 @@ extension DemoViewController {
     guard case let cell as DemoCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath) else {
       return
     }
+    if currentIndex != indexPath.row { return }
     
     if cell.isOpened == false {
       cell.cellIsOpen(true)
