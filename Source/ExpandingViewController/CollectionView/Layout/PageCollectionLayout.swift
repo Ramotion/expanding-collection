@@ -12,9 +12,9 @@ class PageCollectionLayout: UICollectionViewFlowLayout {
   
   private var lastCollectionViewSize: CGSize = CGSizeZero
   
-  var scalingOffset: CGFloat = 200 //for offsets >= scalingOffset scale factor is minimumScaleFactor
+  var scalingOffset: CGFloat      = 200
   var minimumScaleFactor: CGFloat = 0.9
-  var scaleItems: Bool = true
+  var scaleItems: Bool            = true
   
   required init?(coder aDecoder: NSCoder) {
     fatalError()
@@ -31,9 +31,9 @@ class PageCollectionLayout: UICollectionViewFlowLayout {
 extension PageCollectionLayout {
   
   private func commonInit(itemSize: CGSize) {
-    scrollDirection = .Horizontal
+    scrollDirection    = .Horizontal
     minimumLineSpacing = 25
-    self.itemSize = itemSize
+    self.itemSize      = itemSize
   }
 }
 
@@ -139,7 +139,7 @@ extension PageCollectionLayout {
     }
     
     let inset = collectionView.bounds.size.width / 2 - itemSize.width / 2
-    collectionView.contentInset = UIEdgeInsetsMake(0, inset, 0, inset)
+    collectionView.contentInset  = UIEdgeInsetsMake(0, inset, 0, inset)
     collectionView.contentOffset = CGPointMake(-inset, 0)
   }
 }

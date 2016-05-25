@@ -16,10 +16,10 @@ public class BasePageCollectionCell: UICollectionViewCell {
   
   struct Constants {
     static let backContainer = "backContainerViewKey"
-    static let shadowView = "shadowViewKey"
-    static let frontContainer = "frontContainerKey"
-    
-    static let backContainerY = "backContainerYKey"
+    static let shadowView      = "shadowViewKey"
+    static let frontContainer  = "frontContainerKey"
+
+    static let backContainerY  = "backContainerYKey"
     static let frontContainerY = "frontContainerYKey"
   }
   
@@ -41,6 +41,12 @@ public class BasePageCollectionCell: UICollectionViewCell {
     
     configureOutletFromDecoder(aDecoder)
   }
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    
+    commonInit()
+  }
 }
 
 // MARK: life cicle
@@ -50,13 +56,13 @@ extension BasePageCollectionCell {
   public override func awakeFromNib() {
     super.awakeFromNib()
     
+    commonInit()
+  }
+  
+  private func commonInit() {
     configurationViews()
     shadowView = createShadowViewOnView(frontContainerView)
   }
-  
-  public override func prepareForReuse() {
-    
- }
 }
 
 // MARK: Control 
@@ -78,11 +84,9 @@ extension BasePageCollectionCell {
     }
     
     if animated == true {
-      
-      UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations: { 
+      UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations: {
         self.contentView.layoutIfNeeded()
       }, completion: nil)
-      
     } else {
       self.contentView.layoutIfNeeded()
     }
@@ -97,26 +101,26 @@ extension BasePageCollectionCell {
   
   private func configurationViews() {
     backContainerView.layer.masksToBounds = true
-    backContainerView.layer.cornerRadius = 5
+    backContainerView.layer.cornerRadius  = 5
     
     frontContainerView.layer.masksToBounds = true
-    frontContainerView.layer.cornerRadius = 5
+    frontContainerView.layer.cornerRadius  = 5
     
     contentView.layer.masksToBounds = false
-    layer.masksToBounds = false
+    layer.masksToBounds             = false
   }
   
   private func createShadowViewOnView(view: UIView?) -> UIView? {
     guard let view = view else {return nil}
     
     let shadow = Init(UIView(frame: .zero)) {
-      $0.backgroundColor = .clearColor()
+      $0.backgroundColor                           = .clearColor()
       $0.translatesAutoresizingMaskIntoConstraints = false
-      $0.layer.masksToBounds = false;
-      $0.layer.shadowColor = UIColor.blackColor().CGColor
-      $0.layer.shadowRadius = 10
-      $0.layer.shadowOpacity = 0.3
-      $0.layer.shadowOffset = CGSize(width: 0, height:0)
+      $0.layer.masksToBounds                       = false;
+      $0.layer.shadowColor                         = UIColor.blackColor().CGColor
+      $0.layer.shadowRadius                        = 10
+      $0.layer.shadowOpacity                       = 0.3
+      $0.layer.shadowOffset                        = CGSize(width: 0, height:0)
     }
     contentView.insertSubview(shadow, belowSubview: view)
     
@@ -125,7 +129,7 @@ extension BasePageCollectionCell {
       if let frontViewConstraint = view.getConstraint(info.attribute) {
         shadow >>>- {
           $0.attribute = info.attribute
-          $0.constant = frontViewConstraint.constant * info.scale
+          $0.constant  = frontViewConstraint.constant * info.scale
         }
       }
     }
@@ -133,19 +137,18 @@ extension BasePageCollectionCell {
     for info: (attribute: NSLayoutAttribute, offset: CGFloat)  in [(NSLayoutAttribute.CenterX, 0), (NSLayoutAttribute.CenterY, 30)] {
       (contentView, shadow, view) >>>- {
         $0.attribute = info.attribute
-        $0.constant = info.offset
+        $0.constant  = info.offset
       }
     }
     
     // size shadow
-    let width = shadow.getConstraint(.Width)?.constant
+    let width  = shadow.getConstraint(.Width)?.constant
     let height = shadow.getConstraint(.Height)?.constant
     
     shadow.layer.shadowPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: width!, height: height!), cornerRadius: 0).CGPath
     
     return shadow
   }
-
 }
 
 // MARK: NSCoding
@@ -173,20 +176,20 @@ extension BasePageCollectionCell {
     }
     
     // configure
-    copyView.backContainerView.layer.masksToBounds = backContainerView.layer.masksToBounds
-    copyView.backContainerView.layer.cornerRadius = backContainerView.layer.cornerRadius
-    
+    copyView.backContainerView.layer.masksToBounds  = backContainerView.layer.masksToBounds
+    copyView.backContainerView.layer.cornerRadius   = backContainerView.layer.cornerRadius
+
     copyView.frontContainerView.layer.masksToBounds = frontContainerView.layer.masksToBounds
-    copyView.frontContainerView.layer.cornerRadius = frontContainerView.layer.cornerRadius
+    copyView.frontContainerView.layer.cornerRadius  = frontContainerView.layer.cornerRadius
     
     // copy shadow layer
-    copyView.shadowView?.layer.shadowPath = shadowView.layer.shadowPath
+    copyView.shadowView?.layer.shadowPath    = shadowView.layer.shadowPath
     copyView.shadowView?.layer.masksToBounds = shadowView.layer.masksToBounds
-    copyView.shadowView?.layer.shadowColor = shadowView.layer.shadowColor
-    copyView.shadowView?.layer.shadowRadius = shadowView.layer.shadowRadius
+    copyView.shadowView?.layer.shadowColor   = shadowView.layer.shadowColor
+    copyView.shadowView?.layer.shadowRadius  = shadowView.layer.shadowRadius
     copyView.shadowView?.layer.shadowOpacity = shadowView.layer.shadowOpacity
-    copyView.shadowView?.layer.shadowOffset = shadowView.layer.shadowOffset
-    
+    copyView.shadowView?.layer.shadowOffset  = shadowView.layer.shadowOffset
+
     // copy accessibilityIdentifier
     for index in 0..<frontContainerView.subviews.count {
       copyView.frontContainerView.subviews[index].accessibilityIdentifier = frontContainerView.subviews[index].accessibilityIdentifier

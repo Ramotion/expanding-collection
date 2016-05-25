@@ -75,7 +75,7 @@ extension DemoViewController {
     
     // double swipe Up transition
     if cell.isOpened == true && sender.direction == .Up {
-      pushToViewController(getViewController(), index: indexPath.row)
+      pushToViewController(getViewController())
       
       if case let rightButton as AnimatingBarButton = navigationItem.rightBarButtonItem {
         rightButton.animationSelected(true)
@@ -118,7 +118,7 @@ extension DemoViewController {
     if cell.isOpened == false {
       cell.cellIsOpen(true)
     } else {
-      pushToViewController(getViewController(), index: indexPath.row)
+      pushToViewController(getViewController())
       
       if case let rightButton as AnimatingBarButton = navigationItem.rightBarButtonItem {
         rightButton.animationSelected(true)

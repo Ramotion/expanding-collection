@@ -35,7 +35,7 @@ extension PageCollectionView {
     // add constraints
     collectionView >>>- {
       $0.attribute = .Height
-      $0.constant = height
+      $0.constant  = height
     }
     [NSLayoutAttribute.Left, .Right, .CenterY].forEach { attribute in
       (view, collectionView) >>>- { $0.attribute = attribute }

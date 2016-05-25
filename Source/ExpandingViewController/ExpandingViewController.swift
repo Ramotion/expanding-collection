@@ -36,7 +36,7 @@ extension ExpandingViewController {
 
 extension ExpandingViewController {
   
-  func pushToViewController(viewController: ExpandingTableViewController, index: Int) {
+  func pushToViewController(viewController: ExpandingTableViewController) {
     guard let collectionView = self.collectionView else {
       return
     }
@@ -44,7 +44,7 @@ extension ExpandingViewController {
     viewController.transitionDriver = transitionDriver
     let backImage = getBackImage(viewController, headerHeight: viewController.headerHeight)
     
-    transitionDriver?.pushTransitionAnimationIndex(index, collecitionView: collectionView, backImage: backImage) { headerView in
+    transitionDriver?.pushTransitionAnimationIndex(currentIndex, collecitionView: collectionView, backImage: backImage) { headerView in
       viewController.tableView.tableHeaderView = headerView
       self.navigationController?.pushViewController(viewController, animated: false)
     }

@@ -21,7 +21,6 @@ extension DemoTableViewController {
     let backImageOrigin = CGPoint(x: 0, y: height + tableView.contentOffset.y)
     return view.takeSnapshot(CGRect(origin: backImageOrigin, size: backImageSize))
   }
-  
 }
 
 // MARK: Actions
