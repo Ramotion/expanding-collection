@@ -12,7 +12,7 @@ class TransitionDriver {
   
   // MARK: Constants
   struct Constants {
-    static let HideKey = "hide"
+    static let HideKey = 101
   }
   
   // MARK: Vars
@@ -66,14 +66,17 @@ extension TransitionDriver {
     copyView.backContainerView.animationCornerRadius(0, duration: duration)
     copyView.frontContainerView.animationCornerRadius(0, duration: duration)
     
+//    for case let item in copyView.frontContainerView.subviews where item.tag == Constants.HideKey {
+//      UIView.animateWithDuration(duration, animations: { 
+//        item.alpha = 0
+//      })
+//    }
     // constraints animation
     UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
       self.view.layoutIfNeeded()
       self.backImageView?.alpha        = 1
       self.copyCell?.shadowView?.alpha = 0
-      for case let item in copyView.frontContainerView.subviews where item.accessibilityIdentifier == Constants.HideKey {
-        item.alpha = 0
-      }
+      copyView.frontContainerView.subviewsForEach { if $0.tag == Constants.HideKey { $0.alpha = 0 } }
     }, completion: { success in
       let data = NSKeyedArchiver.archivedDataWithRootObject(copyView.frontContainerView)
       guard case let headerView as UIView = NSKeyedUnarchiver.unarchiveObjectWithData(data) else {
@@ -84,32 +87,36 @@ extension TransitionDriver {
   }
   
   func popTransitionAnimationContantOffset(offset: CGFloat, backImage: UIImage?) {
-    guard let currentCell = self.copyCell else {
+    guard let copyCell = self.copyCell else {
       return
     }
     
     backImageView?.image = backImage
     // configuration start position
-    configureCellBeforeClose(currentCell, offset: offset)
+    configureCellBeforeClose(copyCell, offset: offset)
     
-    closeBackViewConfigurationConstraints(currentCell)
-    closeFrontViewConfigurationConstraints(currentCell)
+    closeBackViewConfigurationConstraints(copyCell)
+    closeFrontViewConfigurationConstraints(copyCell)
     
     // corner animation
-    copyCell?.backContainerView.animationCornerRadius(currentCell.backContainerView.layer.cornerRadius, duration: duration)
-    copyCell?.frontContainerView.animationCornerRadius(currentCell.frontContainerView.layer.cornerRadius, duration: duration)
+    copyCell.backContainerView.animationCornerRadius(copyCell.backContainerView.layer.cornerRadius, duration: duration)
+    copyCell.frontContainerView.animationCornerRadius(copyCell.frontContainerView.layer.cornerRadius, duration: duration)
+    
+//    UIView.animateWithDuration(duration) {
+//      copyCell.frontContainerView.subviews
+//        .filter { $0.tag == Constants.HideKey }
+//        .forEach{ $0.alpha = 1 }
+//    }
     
     UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
       self.rightCell?.center.x -= self.step
       self.leftCell?.center.x  += self.step
       
       self.view.layoutIfNeeded()
-      self.backImageView?.alpha        = 0
-      self.copyCell?.shadowView?.alpha = 1
- 
-      for case let item as UILabel in currentCell.frontContainerView.subviews where item.accessibilityIdentifier == Constants.HideKey {
-        item.alpha = 1
-      }
+      self.backImageView?.alpha  = 0
+      copyCell.shadowView?.alpha = 1
+      
+      copyCell.frontContainerView.subviewsForEach { if $0.tag == Constants.HideKey { $0.alpha = 1 } }
       }, completion: { success in
          self.currentCell?.hidden = false
          self.removeCurrentCell()

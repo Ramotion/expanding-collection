@@ -191,10 +191,6 @@ extension BasePageCollectionCell {
     copyView.shadowView?.layer.shadowOpacity = shadowView.layer.shadowOpacity
     copyView.shadowView?.layer.shadowOffset  = shadowView.layer.shadowOffset
 
-    // copy accessibilityIdentifier
-    for index in 0..<frontContainerView.subviews.count {
-      copyView.frontContainerView.subviews[index].accessibilityIdentifier = frontContainerView.subviews[index].accessibilityIdentifier
-    }
     return copyView
   }
   

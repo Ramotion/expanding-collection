@@ -11,9 +11,13 @@ import UIKit
 class DemoCollectionViewCell: BasePageCollectionCell {
   
   @IBOutlet weak var backgroundImageView: UIImageView!
+  @IBOutlet weak var customTitle: UILabel!
   
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
+//      customTitle.layer.shadowRadius = 3
+//      customTitle.layer.shadowOpacity = 1
+      
     }
 }

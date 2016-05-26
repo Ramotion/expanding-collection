@@ -72,9 +72,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="9FK-FA-F0l">
                                 <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATCOASTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFh-D7-eSl">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATCOASTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFh-D7-eSl">
                                 <rect key="frame" x="68" y="10" width="121" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="hide"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -91,7 +93,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.2070791421" blue="0.80130883779999995" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ZG8-y8-Dfi" firstAttribute="centerX" secondItem="oce-vs-fcR" secondAttribute="centerX" id="5kH-aW-2nu"/>
                                     <constraint firstAttribute="height" constant="32" id="Ltd-P2-jig"/>
@@ -103,6 +105,10 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LFF-iv-Z1U">
                                         <rect key="frame" x="2" y="7" width="15" height="18"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="1dN-X0-Bf6"/>
                                             <constraint firstAttribute="width" constant="15" id="bDb-0k-7tD"/>
@@ -110,6 +116,10 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6kc-cx-RQG"/>
                                     <constraint firstAttribute="width" constant="20" id="HZC-Cm-9vv"/>
@@ -117,7 +127,7 @@
                                     <constraint firstItem="LFF-iv-Z1U" firstAttribute="centerY" secondItem="FVj-GH-Mhw" secondAttribute="centerY" id="wiM-X5-HkU"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKg-XH-vNU" userLabel="RightView">
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKg-XH-vNU" userLabel="RightView">
                                 <rect key="frame" x="140" y="293" width="110" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EAST LNG 97" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmS-RM-seQ">
@@ -170,6 +180,7 @@
                 <outlet property="backConstraintY" destination="dmf-qy-2nS" id="szE-V2-yce"/>
                 <outlet property="backContainerView" destination="rbd-6U-uYZ" id="bk5-30-huH"/>
                 <outlet property="backgroundImageView" destination="9FK-FA-F0l" id="kns-UF-jMo"/>
+                <outlet property="customTitle" destination="XFh-D7-eSl" id="eia-lY-ptu"/>
                 <outlet property="frontConstraintY" destination="0xA-8H-CCG" id="qOL-jY-lrP"/>
                 <outlet property="frontContainerView" destination="4h2-Xv-xjU" id="Mxy-UR-phd"/>
             </connections>
