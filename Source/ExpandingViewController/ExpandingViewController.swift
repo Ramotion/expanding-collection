@@ -44,7 +44,10 @@ extension ExpandingViewController {
     viewController.transitionDriver = transitionDriver
     let backImage = getBackImage(viewController, headerHeight: viewController.headerHeight)
     
-    transitionDriver?.pushTransitionAnimationIndex(currentIndex, collecitionView: collectionView, backImage: backImage) { headerView in
+    transitionDriver?.pushTransitionAnimationIndex(currentIndex,
+                                                   collecitionView: collectionView,
+                                                   backImage: backImage,
+                                                   headerHeight: viewController.headerHeight) { headerView in
       viewController.tableView.tableHeaderView = headerView
       self.navigationController?.pushViewController(viewController, animated: false)
     }

@@ -44,6 +44,7 @@ extension TransitionDriver {
   func pushTransitionAnimationIndex(currentIndex: Int,
                                     collecitionView: UICollectionView,
                                     backImage: UIImage?,
+                                    headerHeight: CGFloat,
                                     completion: UIView -> Void) {
     
     guard case let cell as BasePageCollectionCell = collecitionView.cellForItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0)),
@@ -59,19 +60,14 @@ extension TransitionDriver {
     configurateCell(copyView, backImage: backImage)
     backImageView = addImageToView(copyView.backContainerView, image: backImage)
     
-    openBackViewConfigureConstraints(copyView)
-    openFrontViewConfigureConstraints(copyView)
+    openBackViewConfigureConstraints(copyView, height: headerHeight)
+    openFrontViewConfigureConstraints(copyView, height: headerHeight)
     
     // corner animation 
     copyView.backContainerView.animationCornerRadius(0, duration: duration)
     copyView.frontContainerView.animationCornerRadius(0, duration: duration)
     
-//    for case let item in copyView.frontContainerView.subviews where item.tag == Constants.HideKey {
-//      UIView.animateWithDuration(duration, animations: { 
-//        item.alpha = 0
-//      })
-//    }
-    // constraints animation
+   // constraints animation
     UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
       self.view.layoutIfNeeded()
       self.backImageView?.alpha        = 1
@@ -101,12 +97,6 @@ extension TransitionDriver {
     // corner animation
     copyCell.backContainerView.animationCornerRadius(copyCell.backContainerView.layer.cornerRadius, duration: duration)
     copyCell.frontContainerView.animationCornerRadius(copyCell.frontContainerView.layer.cornerRadius, duration: duration)
-    
-//    UIView.animateWithDuration(duration) {
-//      copyCell.frontContainerView.subviews
-//        .filter { $0.tag == Constants.HideKey }
-//        .forEach{ $0.alpha = 1 }
-//    }
     
     UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseInOut, animations: {
       self.rightCell?.center.x -= self.step
@@ -198,11 +188,11 @@ extension TransitionDriver {
 
 extension TransitionDriver {
   
-  private func openFrontViewConfigureConstraints(cell: BasePageCollectionCell) {
+  private func openFrontViewConfigureConstraints(cell: BasePageCollectionCell, height: CGFloat) {
     
     if let heightConstraint = cell.frontContainerView.getConstraint(.Height) {
       frontViewFrame.size.height = heightConstraint.constant
-      heightConstraint.constant  = 236
+      heightConstraint.constant  = height
     }
     
     if let widthConstraint = cell.frontContainerView.getConstraint(.Width) {
@@ -211,14 +201,14 @@ extension TransitionDriver {
     }
     
     frontViewFrame.origin.y        = cell.frontConstraintY.constant
-    cell.frontConstraintY.constant = -view.bounds.size.height / 2 + 236 / 2
+    cell.frontConstraintY.constant = -view.bounds.size.height / 2 + height / 2
   }
   
-  private func openBackViewConfigureConstraints(cell: BasePageCollectionCell) {
+  private func openBackViewConfigureConstraints(cell: BasePageCollectionCell, height: CGFloat) {
     
     if let heightConstraint = cell.backContainerView.getConstraint(.Height) {
       backViewFrame.size.height = heightConstraint.constant
-      heightConstraint.constant = view.bounds.size.height - 236
+      heightConstraint.constant = view.bounds.size.height - height
     }
     
     if let widthConstraint = cell.backContainerView.getConstraint(.Width) {
