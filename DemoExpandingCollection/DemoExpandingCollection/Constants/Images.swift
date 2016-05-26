@@ -20,7 +20,7 @@ extension UIImage {
     case LocationButton = "locationButton"
     case Map = "map"
     case PinIcon = "pinIcon"
-    case SearchButton = "searchButton"
+    case SearchIcon = "searchIcon"
     case Stars = "stars"
 
     var image: UIImage {

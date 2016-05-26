@@ -10,6 +10,10 @@ import UIKit
 
 class DemoTableViewController: ExpandingTableViewController {
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureNavBar()
+  }
 }
 // MARK: Helpers
 
@@ -20,6 +24,11 @@ extension DemoTableViewController {
     let backImageSize = CGSize(width: view.bounds.width, height: view.bounds.height - height)
     let backImageOrigin = CGPoint(x: 0, y: height + tableView.contentOffset.y)
     return view.takeSnapshot(CGRect(origin: backImageOrigin, size: backImageSize))
+  }
+  
+  private func configureNavBar() {
+    navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+    navigationItem.rightBarButtonItem?.image = navigationItem.rightBarButtonItem?.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
   }
 }
 

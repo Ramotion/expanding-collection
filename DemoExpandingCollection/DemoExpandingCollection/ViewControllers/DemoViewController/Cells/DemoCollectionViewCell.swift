@@ -16,9 +16,9 @@ class DemoCollectionViewCell: BasePageCollectionCell {
     override func awakeFromNib() {
         super.awakeFromNib()
       
-      customTitle.layer.shadowRadius = 1
-      customTitle.layer.shadowOffset = CGSize(width: 0, height: 2)
-      customTitle.layer.shadowOpacity = 0.1
+      customTitle.layer.shadowRadius = 2
+      customTitle.layer.shadowOffset = CGSize(width: 0, height: 3)
+      customTitle.layer.shadowOpacity = 0.2
       
     }
 }

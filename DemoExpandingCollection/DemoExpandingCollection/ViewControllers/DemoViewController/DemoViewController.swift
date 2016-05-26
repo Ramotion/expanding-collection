@@ -27,6 +27,7 @@ extension DemoViewController {
     registerCell()
     fillCellIsOpeenArry()
     addGestureToView(collectionView!)
+    configureNavBar()
   }
 }
 
@@ -49,6 +50,10 @@ extension DemoViewController {
     let storyboard = UIStoryboard(storyboard: .Main)
     let toViewController: DemoTableViewController = storyboard.instantiateViewController()
     return toViewController
+  }
+  
+  private func configureNavBar() {
+    navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
   }
 }
 

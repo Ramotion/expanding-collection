@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8422CA731CF73EE4007E8522 /* AnimationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422CA701CF73EE4007E8522 /* AnimationBarButton.swift */; };
+		8422CA741CF73EE4007E8522 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422CA721CF73EE4007E8522 /* Rotatable.swift */; };
 		8485962C1CF585F3000BCC74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485962B1CF585F3000BCC74 /* AppDelegate.swift */; };
 		8485962E1CF585F3000BCC74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485962D1CF585F3000BCC74 /* ViewController.swift */; };
 		848596311CF585F3000BCC74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8485962F1CF585F3000BCC74 /* Main.storyboard */; };
 		848596331CF585F3000BCC74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848596321CF585F3000BCC74 /* Assets.xcassets */; };
 		848596361CF585F3000BCC74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848596341CF585F3000BCC74 /* LaunchScreen.storyboard */; };
 		848596411CF585F3000BCC74 /* DemoExpandingCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848596401CF585F3000BCC74 /* DemoExpandingCollectionTests.swift */; };
-		848596501CF58672000BCC74 /* AnimationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485964D1CF58672000BCC74 /* AnimationBarButton.swift */; };
-		848596511CF58672000BCC74 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485964F1CF58672000BCC74 /* Rotatable.swift */; };
 		8485965A1CF586F7000BCC74 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848596541CF586F7000BCC74 /* DemoTableViewController.swift */; };
 		8485965B1CF586F7000BCC74 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848596571CF586F7000BCC74 /* DemoCollectionViewCell.swift */; };
 		8485965C1CF586F7000BCC74 /* DemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848596581CF586F7000BCC74 /* DemoCollectionViewCell.xib */; };
@@ -46,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8422CA701CF73EE4007E8522 /* AnimationBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationBarButton.swift; sourceTree = "<group>"; };
+		8422CA721CF73EE4007E8522 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
 		848596281CF585F3000BCC74 /* DemoExpandingCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoExpandingCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8485962B1CF585F3000BCC74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8485962D1CF585F3000BCC74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		8485963C1CF585F3000BCC74 /* DemoExpandingCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoExpandingCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		848596401CF585F3000BCC74 /* DemoExpandingCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoExpandingCollectionTests.swift; sourceTree = "<group>"; };
 		848596421CF585F3000BCC74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8485964D1CF58672000BCC74 /* AnimationBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationBarButton.swift; sourceTree = "<group>"; };
-		8485964F1CF58672000BCC74 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
 		848596541CF586F7000BCC74 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewController.swift; sourceTree = "<group>"; };
 		848596571CF586F7000BCC74 /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		848596581CF586F7000BCC74 /* DemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -96,6 +96,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8422CA6E1CF73ECD007E8522 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8422CA6F1CF73EE4007E8522 /* AnimatingBarButton */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8422CA6F1CF73EE4007E8522 /* AnimatingBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				8422CA701CF73EE4007E8522 /* AnimationBarButton.swift */,
+				8422CA711CF73EE4007E8522 /* Animations */,
+			);
+			path = AnimatingBarButton;
+			sourceTree = "<group>";
+		};
+		8422CA711CF73EE4007E8522 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				8422CA721CF73EE4007E8522 /* Rotatable.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		8485961F1CF585F3000BCC74 = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +142,11 @@
 		8485962A1CF585F3000BCC74 /* DemoExpandingCollection */ = {
 			isa = PBXGroup;
 			children = (
+				8422CA6E1CF73ECD007E8522 /* Views */,
 				8485967C1CF589A4000BCC74 /* Helpers */,
 				8485966B1CF588E0000BCC74 /* Constants */,
 				8485965E1CF5870B000BCC74 /* Source */,
 				848596521CF586E0000BCC74 /* ViewControllers */,
-				8485964B1CF58672000BCC74 /* Views */,
 				8485962B1CF585F3000BCC74 /* AppDelegate.swift */,
 				8485962D1CF585F3000BCC74 /* ViewController.swift */,
 				8485962F1CF585F3000BCC74 /* Main.storyboard */,
@@ -139,31 +164,6 @@
 				848596421CF585F3000BCC74 /* Info.plist */,
 			);
 			path = DemoExpandingCollectionTests;
-			sourceTree = "<group>";
-		};
-		8485964B1CF58672000BCC74 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8485964C1CF58672000BCC74 /* AnimatingBarButton */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		8485964C1CF58672000BCC74 /* AnimatingBarButton */ = {
-			isa = PBXGroup;
-			children = (
-				8485964D1CF58672000BCC74 /* AnimationBarButton.swift */,
-				8485964E1CF58672000BCC74 /* Animations */,
-			);
-			path = AnimatingBarButton;
-			sourceTree = "<group>";
-		};
-		8485964E1CF58672000BCC74 /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				8485964F1CF58672000BCC74 /* Rotatable.swift */,
-			);
-			path = Animations;
 			sourceTree = "<group>";
 		};
 		848596521CF586E0000BCC74 /* ViewControllers */ = {
@@ -484,14 +484,14 @@
 				8485967F1CF589C4000BCC74 /* StoryboardHelper.swift in Sources */,
 				8485965A1CF586F7000BCC74 /* DemoTableViewController.swift in Sources */,
 				8485965B1CF586F7000BCC74 /* DemoCollectionViewCell.swift in Sources */,
-				848596511CF58672000BCC74 /* Rotatable.swift in Sources */,
 				8485966A1CF58853000BCC74 /* ExpandingTableViewController.swift in Sources */,
 				8485967B1CF5897B000BCC74 /* ScreenShotHelper.swift in Sources */,
 				8485962E1CF585F3000BCC74 /* ViewController.swift in Sources */,
 				848596721CF58954000BCC74 /* CornerAnimatable.swift in Sources */,
+				8422CA741CF73EE4007E8522 /* Rotatable.swift in Sources */,
 				8485965D1CF586F7000BCC74 /* DemoViewController.swift in Sources */,
 				8485966D1CF588E0000BCC74 /* Images.swift in Sources */,
-				848596501CF58672000BCC74 /* AnimationBarButton.swift in Sources */,
+				8422CA731CF73EE4007E8522 /* AnimationBarButton.swift in Sources */,
 				8485968B1CF58A7D000BCC74 /* CollectionViewHelper.swift in Sources */,
 				8485962C1CF585F3000BCC74 /* AppDelegate.swift in Sources */,
 				848596821CF58A36000BCC74 /* ExpandingViewController.swift in Sources */,

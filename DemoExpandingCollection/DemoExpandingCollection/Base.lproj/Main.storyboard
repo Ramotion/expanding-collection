@@ -39,7 +39,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TOFIND" id="Mck-gv-XOR">
-                        <barButtonItem key="leftBarButtonItem" image="searchButton" id="xuF-jX-6LN"/>
+                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="xuF-jX-6LN"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="mbm-hT-lYD" customClass="AnimatingBarButton" customModule="DemoExpandingCollection" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="normalImageName" value="locationButton"/>
@@ -410,7 +410,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TOFIND" id="9zG-W9-jGP">
-                        <barButtonItem key="leftBarButtonItem" image="searchButton" id="sSw-AG-wrF"/>
+                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="sSw-AG-wrF"/>
                         <barButtonItem key="rightBarButtonItem" image="CloseButton" id="liu-ff-VuS">
                             <connections>
                                 <action selector="backButtonHandler:" destination="7RW-i0-HfN" id="cOO-dk-yI9"/>
@@ -425,12 +425,12 @@
     </scenes>
     <resources>
         <image name="BackgroundImage" width="375" height="667"/>
-        <image name="CloseButton" width="30" height="30"/>
+        <image name="CloseButton" width="20" height="20"/>
         <image name="face1" width="40" height="39"/>
         <image name="face2" width="40" height="39"/>
         <image name="heand" width="14" height="13"/>
         <image name="map" width="375" height="124"/>
-        <image name="searchButton" width="31" height="30"/>
+        <image name="searchIcon" width="20" height="20"/>
         <image name="stars" width="77" height="11"/>
     </resources>
 </document>
