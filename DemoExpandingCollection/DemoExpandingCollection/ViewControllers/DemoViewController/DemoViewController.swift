@@ -10,8 +10,9 @@ import UIKit
 
 class DemoViewController: ExpandingViewController {
   
+  typealias ItemInfo = (imageName: String, title: String)
   private var cellsIsOpen = [Bool]()
-  private let itemsCount = 15
+  private let items: [ItemInfo] = [("item0", "Boston"),("item1", "New York"),("item2", "San Francisco"),("item3", "Washington")]
   
   @IBOutlet weak var pageLabel: UILabel!
 }
@@ -39,7 +40,7 @@ extension DemoViewController {
   }
   
   private func fillCellIsOpeenArry() {
-    for _ in 0..<itemsCount {
+    for _ in 0..<items.count {
       cellsIsOpen.append(false)
     }
   }
@@ -93,7 +94,7 @@ extension DemoViewController {
 extension DemoViewController {
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
-    pageLabel.text = "\(currentIndex)/\(itemsCount)"
+    pageLabel.text = "\(currentIndex)/\(items.count)"
   }
 }
 
@@ -106,7 +107,9 @@ extension DemoViewController {
       return
     }
     let index = indexPath.row % 4
-    cell.backgroundImageView?.image = UIImage(named: "item\(index)")
+    let info = items[index]
+    cell.backgroundImageView?.image = UIImage(named: info.imageName)
+    cell.customTitle.text = info.title
     cell.cellIsOpen(cellsIsOpen[indexPath.row], animated: false)
   }
   
@@ -133,7 +136,7 @@ extension DemoViewController {
 extension DemoViewController {
   
   override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return itemsCount
+    return items.count
   }
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
