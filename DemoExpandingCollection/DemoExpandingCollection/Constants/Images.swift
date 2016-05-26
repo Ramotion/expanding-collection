@@ -17,7 +17,6 @@ extension UIImage {
     case Item1 = "item1"
     case Item2 = "item2"
     case Item3 = "item3"
-    case Item4 = "item4"
     case LocationButton = "locationButton"
     case Map = "map"
     case PinIcon = "pinIcon"

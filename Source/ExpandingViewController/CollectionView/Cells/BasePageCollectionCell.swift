@@ -167,6 +167,16 @@ extension BasePageCollectionCell {
     }
   }
   
+  private func copyShadowFromView(fromView: UIView, toView: UIView) {
+    fromView.layer.shadowPath    = toView.layer.shadowPath
+    fromView.layer.masksToBounds = toView.layer.masksToBounds
+    fromView.layer.shadowColor   = toView.layer.shadowColor
+    fromView.layer.shadowRadius  = toView.layer.shadowRadius
+    fromView.layer.shadowOpacity = toView.layer.shadowOpacity
+    fromView.layer.shadowOffset  = toView.layer.shadowOffset
+  }
+
+  
   func copyCell() -> BasePageCollectionCell? {
     highlightedImageFalseOnView(contentView)
     
@@ -184,13 +194,11 @@ extension BasePageCollectionCell {
     copyView.frontContainerView.layer.cornerRadius  = frontContainerView.layer.cornerRadius
     
     // copy shadow layer
-    copyView.shadowView?.layer.shadowPath    = shadowView.layer.shadowPath
-    copyView.shadowView?.layer.masksToBounds = shadowView.layer.masksToBounds
-    copyView.shadowView?.layer.shadowColor   = shadowView.layer.shadowColor
-    copyView.shadowView?.layer.shadowRadius  = shadowView.layer.shadowRadius
-    copyView.shadowView?.layer.shadowOpacity = shadowView.layer.shadowOpacity
-    copyView.shadowView?.layer.shadowOffset  = shadowView.layer.shadowOffset
-
+    copyShadowFromView(copyView.shadowView!, toView: shadowView)
+    
+    for index in 0..<copyView.frontContainerView.subviews.count {
+      copyShadowFromView(copyView.frontContainerView.subviews[index], toView: frontContainerView.subviews[index])
+    }
     return copyView
   }
   

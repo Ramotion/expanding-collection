@@ -45,7 +45,6 @@ extension AppDelegate {
     UINavigationBar.appearance().shadowImage     = UIImage()
     UINavigationBar.appearance().translucent     = true
     UINavigationBar.appearance().tintColor       = .whiteColor()
-    UINavigationBar.appearance().backgroundColor = UIColor(red:0.14, green:0.16, blue:0.24, alpha:0.3)
     
     UINavigationBar.appearance().titleTextAttributes = [
       NSForegroundColorAttributeName : UIColor.whiteColor()

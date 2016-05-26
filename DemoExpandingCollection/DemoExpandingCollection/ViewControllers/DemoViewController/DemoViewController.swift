@@ -105,7 +105,7 @@ extension DemoViewController {
     guard case let cell as DemoCollectionViewCell = cell else {
       return
     }
-    let index = indexPath.row % 5
+    let index = indexPath.row % 4
     cell.backgroundImageView?.image = UIImage(named: "item\(index)")
     cell.cellIsOpen(cellsIsOpen[indexPath.row], animated: false)
   }
