@@ -24,14 +24,14 @@ Just add the Source folder to your project.
 
 or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
-pod 'expanding-collection', '~> 0.0.1'
+pod 'expanding-collection', '~> 0.0.2'
 ```
 ## Usage
 
 `import expanding_collection`
 
-#### Create CollectionViewCell  
-![cell](./somimage.png)
+#### Create CollectionViewCell 
+![cell](./images/image2.png)
 
 1) Create UICollectionViewCell inherit from `BasePageCollectionCell` (recommend create cell with xib file)
 
