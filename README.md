@@ -36,23 +36,23 @@ pod 'expanding-collection', '~> 0.0.2'
 1) Create UICollectionViewCell inherit from `BasePageCollectionCell` (recommend create cell with xib file)
 
 2) Adding FrontView
-  - add view to YOUCELL.xib file and outlet it to `@IBOutlet weak var frontContainerView: UIView!`  property  
-  - add width, height, centerX and centerY constranints. (width and height constranints must equal cellSize)
+  - add a view to YOUCELL.xib and connect it to `@IBOutlet weak var frontContainerView: UIView!`  
+  - add width, height, centerX and centerY constraints (width and height constranints must equal cellSize)
 
   ![cell](./images/image1.png)  
-  - outlet centerY constranints to `@IBOutlet weak var frontConstraintY: NSLayoutConstraint!`
-  - add any uiviews to frontView
+  - connect centerY constraint to `@IBOutlet weak var frontConstraintY: NSLayoutConstraint!`
+  - add any desired uiviews to frontView
 
 3) Adding BackView
   - repeat step 3 (connect outlets to `@IBOutlet weak var backContainerView: UIView!`, `@IBOutlet weak var backConstraintY: NSLayoutConstraint!`)
 
 4) Cell example [DemoCell](https://github.com/Ramotion/expanding-collection/tree/master/DemoExpandingCollection/DemoExpandingCollection/ViewControllers/DemoViewController/Cells)
 
-######   If set `tag = 101` for any `FrontView.subviews` this view hidden on  transition animation
+######   If set `tag = 101` for any `FrontView.subviews` this view will be hidden during the transition animation
 
 #### Create CollectionViewController  
 
-1) Create UIViewController inherit from `ExpandingViewController`
+1) Create a UIViewController inheriting from `ExpandingViewController`
 
 2) Register Cell and set Cell size:
 
@@ -104,7 +104,7 @@ override func viewDidLoad() {
 
 #### Transition animation
 
-1) Create UITableViewController inherit from `ExpandingTableViewController`
+1) Create a UITableViewController inheriting from `ExpandingTableViewController`
 
 2) Set header height default 236
 
@@ -115,7 +115,7 @@ override func viewDidLoad() {
 }  
 ```
 
-3) Call push method in YourViewController to YourTableViewController
+3) Call the push method in YourViewController to YourTableViewController
 
 ``` swift
   if cell.isOpened == true {
@@ -123,7 +123,7 @@ override func viewDidLoad() {
     pushToViewController(vc)
   }
 ```
-4) For back transition use `popTransitionAnimation()` method
+4) For back transition use `popTransitionAnimation()`
 
 
 ## Licence
