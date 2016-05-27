@@ -46,7 +46,9 @@ pod 'expanding-collection', '~> 0.0.2'
 3) Adding BackView
   - repeat step 3 (connect outlets to `@IBOutlet weak var backContainerView: UIView!`, `@IBOutlet weak var backConstraintY: NSLayoutConstraint!`)
 
-4) cell example [DemoCell](https://github.com/Ramotion/expanding-collection/tree/master/DemoExpandingCollection/DemoExpandingCollection/ViewControllers/DemoViewController/Cells)
+4) Cell example [DemoCell](https://github.com/Ramotion/expanding-collection/tree/master/DemoExpandingCollection/DemoExpandingCollection/ViewControllers/DemoViewController/Cells)
+
+######   If set tag = 101 for any FrontView.subviews this view hidden on animation
 
 #### Create CollectionViewController  
 
@@ -121,6 +123,8 @@ override func viewDidLoad() {
     pushToViewController(vc)
   }
 ```
+
+
 
 ## Licence
 
