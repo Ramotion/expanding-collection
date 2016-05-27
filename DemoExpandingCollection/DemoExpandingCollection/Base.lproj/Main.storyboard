@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--TOFIND-->
+        <!--Demo View Controller-->
         <scene sceneID="7vj-xm-Mde">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="owA-8G-88G" customClass="DemoViewController" customModule="DemoExpandingCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,8 +38,27 @@
                             <constraint firstItem="Irl-Rb-fcB" firstAttribute="centerX" secondItem="CO1-du-RsN" secondAttribute="centerX" id="yzg-tR-vdV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TOFIND" id="Mck-gv-XOR">
+                    <navigationItem key="navigationItem" id="Mck-gv-XOR">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="searchIcon" id="xuF-jX-6LN"/>
+                        <view key="titleView" contentMode="scaleToFill" id="U0J-H7-fvX">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="92b-RV-q6w">
+                                    <rect key="frame" x="95" y="9" width="51" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="51" id="E8y-UB-H4U"/>
+                                        <constraint firstAttribute="height" constant="16" id="FBz-Jg-2za"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="92b-RV-q6w" firstAttribute="centerX" secondItem="U0J-H7-fvX" secondAttribute="centerX" id="kLZ-Jr-wTP"/>
+                                <constraint firstItem="92b-RV-q6w" firstAttribute="centerY" secondItem="U0J-H7-fvX" secondAttribute="centerY" id="qaL-Bm-FyO"/>
+                            </constraints>
+                        </view>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="mbm-hT-lYD" customClass="AnimatingBarButton" customModule="DemoExpandingCollection" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="normalImageName" value="locationButton"/>
@@ -78,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="530" y="428"/>
         </scene>
-        <!--TOFIND-->
+        <!--Demo Table View Controller-->
         <scene sceneID="7Xk-ar-e7L">
             <objects>
                 <tableViewController storyboardIdentifier="DemoTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="7RW-i0-HfN" customClass="DemoTableViewController" customModule="DemoExpandingCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -409,8 +428,27 @@
                             <outlet property="delegate" destination="7RW-i0-HfN" id="28D-Ct-5A9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="TOFIND" id="9zG-W9-jGP">
+                    <navigationItem key="navigationItem" id="9zG-W9-jGP">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="searchIcon" id="sSw-AG-wrF"/>
+                        <view key="titleView" contentMode="scaleToFill" id="qyb-Fh-aIr" userLabel="Item View">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="a24-t2-9jd">
+                                    <rect key="frame" x="95" y="9" width="51" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="5Zr-Wx-iQB"/>
+                                        <constraint firstAttribute="width" constant="51" id="RtX-4m-x9W"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="a24-t2-9jd" firstAttribute="centerX" secondItem="qyb-Fh-aIr" secondAttribute="centerX" id="sdW-OO-2BS"/>
+                                <constraint firstItem="a24-t2-9jd" firstAttribute="centerY" secondItem="qyb-Fh-aIr" secondAttribute="centerY" id="xKF-DL-knz"/>
+                            </constraints>
+                        </view>
                         <barButtonItem key="rightBarButtonItem" image="CloseButton" id="liu-ff-VuS">
                             <connections>
                                 <action selector="backButtonHandler:" destination="7RW-i0-HfN" id="cOO-dk-yI9"/>
@@ -426,6 +464,7 @@
     <resources>
         <image name="BackgroundImage" width="375" height="667"/>
         <image name="CloseButton" width="20" height="20"/>
+        <image name="Title" width="51" height="16"/>
         <image name="face1" width="40" height="39"/>
         <image name="face2" width="40" height="39"/>
         <image name="heand" width="14" height="13"/>

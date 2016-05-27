@@ -22,6 +22,7 @@ extension UIImage {
     case PinIcon = "pinIcon"
     case SearchIcon = "searchIcon"
     case Stars = "stars"
+    case Title = "Title"
 
     var image: UIImage {
       return UIImage(asset: self)
