@@ -128,7 +128,7 @@ override func viewDidLoad() {
 
 ## Licence
 
-Navigation-stack is released under the MIT license.
+Epanding collection is released under the MIT license.
 See [LICENSE](./LICENSE) for details.
 
 ## About
