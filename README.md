@@ -3,10 +3,10 @@
 # expanding-collection
 
 [![Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)](http://twitter.com/Ramotion)
-<!-- [![CocoaPods](https://img.shields.io/cocoapods/p/Navigation-stack.svg)](https://cocoapods.org/pods/Navigation-stack) -->
-<!-- [![CocoaPods](https://img.shields.io/cocoapods/v/Navigation-stack.svg)](http://cocoapods.org/pods/Navigation-stack) -->
-<!-- [![Travis](https://img.shields.io/travis/Ramotion/navigation-stack.svg)](https://travis-ci.org/Ramotion/navigation-stack) -->
-<!-- [![codebeat badge](https://codebeat.co/badges/c322a039-b06b-46d9-bf40-e48cf0365b97)](https://codebeat.co/projects/github-com-ramotion-navigation-stack) -->
+[![CocoaPods](https://img.shields.io/cocoapods/p/expanding-collection.svg)](https://cocoapods.org/pods/expanding-collection)
+[![CocoaPods](https://img.shields.io/cocoapods/v/expanding-collection.svg)](http://cocoapods.org/pods/expanding-collection)
+[![Travis](https://travis-ci.org/Ramotion/elastic-pull-to-update.svg?branch=master)](https://travis-ci.org/Ramotion/elastic-pull-to-update)
+[![codebeat badge](https://codebeat.co/badges/6a009992-5bf2-4730-aa35-f3b20ce7693d)](https://codebeat.co/projects/github-com-ramotion-expanding-collection)
 
 [shot on dribbble](https://dribbble.com/shots/2741477-iOS-Expanding-Collection-Open-Source):
 ![Animation](preview.gif)
