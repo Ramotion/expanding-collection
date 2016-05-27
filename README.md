@@ -8,7 +8,7 @@
 <!-- [![Travis](https://img.shields.io/travis/Ramotion/navigation-stack.svg)](https://travis-ci.org/Ramotion/navigation-stack) -->
 <!-- [![codebeat badge](https://codebeat.co/badges/c322a039-b06b-46d9-bf40-e48cf0365b97)](https://codebeat.co/projects/github-com-ramotion-navigation-stack) -->
 
-<!-- [shot on dribbble](https://dribbble.com/shots/2583175-Navigation-Stack-Swift-Open-Source): -->
+[shot on dribbble](https://dribbble.com/shots/2741477-iOS-Expanding-Collection-Open-Source):
 ![Animation](preview.gif)
 
 The [iPhone mockup](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection) available [here](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection).
@@ -30,7 +30,7 @@ pod 'expanding-collection', '~> 0.0.2'
 
 `import expanding_collection`
 
-#### Create CollectionViewCell 
+#### Create CollectionViewCell
 ![cell](./images/image2.png)
 
 1) Create UICollectionViewCell inherit from `BasePageCollectionCell` (recommend create cell with xib file)
