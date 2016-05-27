@@ -34,7 +34,7 @@ extension ExpandingViewController {
 
 // MARK: Transition
 
-extension ExpandingViewController {
+public extension ExpandingViewController {
   
   func pushToViewController(viewController: ExpandingTableViewController) {
     guard let collectionView = self.collectionView else {

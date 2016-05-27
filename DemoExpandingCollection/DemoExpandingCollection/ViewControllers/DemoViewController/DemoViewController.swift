@@ -99,7 +99,7 @@ extension DemoViewController {
 extension DemoViewController {
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
-    pageLabel.text = "\(currentIndex)/\(items.count)"
+    pageLabel.text = "\(currentIndex+1)/\(items.count)"
   }
 }
 

@@ -69,7 +69,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-Xv-xjU">
                         <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="9FK-FA-F0l">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item0" translatesAutoresizingMaskIntoConstraints="NO" id="9FK-FA-F0l">
                                 <rect key="frame" x="0.0" y="0.0" width="256" height="335"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATCOASTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFh-D7-eSl">
@@ -190,7 +190,7 @@
     <resources>
         <image name="dots" width="4" height="19"/>
         <image name="icons" width="116" height="39"/>
-        <image name="image" width="375" height="382"/>
+        <image name="item0" width="414" height="736"/>
         <image name="pinIcon" width="26" height="32"/>
         <image name="stars" width="77" height="11"/>
     </resources>

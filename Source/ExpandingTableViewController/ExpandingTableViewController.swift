@@ -12,7 +12,7 @@ public class ExpandingTableViewController: UITableViewController {
   
   // MARK: Vars
 
-  var headerHeight: CGFloat = 236
+  public var headerHeight: CGFloat = 236
   var transitionDriver: TransitionDriver?
   
   public required init?(coder aDecoder: NSCoder) {

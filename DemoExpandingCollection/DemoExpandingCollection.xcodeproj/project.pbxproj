@@ -10,7 +10,6 @@
 		8422CA731CF73EE4007E8522 /* AnimationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422CA701CF73EE4007E8522 /* AnimationBarButton.swift */; };
 		8422CA741CF73EE4007E8522 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422CA721CF73EE4007E8522 /* Rotatable.swift */; };
 		8485962C1CF585F3000BCC74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485962B1CF585F3000BCC74 /* AppDelegate.swift */; };
-		8485962E1CF585F3000BCC74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485962D1CF585F3000BCC74 /* ViewController.swift */; };
 		848596311CF585F3000BCC74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8485962F1CF585F3000BCC74 /* Main.storyboard */; };
 		848596331CF585F3000BCC74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848596321CF585F3000BCC74 /* Assets.xcassets */; };
 		848596361CF585F3000BCC74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848596341CF585F3000BCC74 /* LaunchScreen.storyboard */; };
@@ -50,7 +49,6 @@
 		8422CA721CF73EE4007E8522 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
 		848596281CF585F3000BCC74 /* DemoExpandingCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoExpandingCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8485962B1CF585F3000BCC74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8485962D1CF585F3000BCC74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		848596301CF585F3000BCC74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848596321CF585F3000BCC74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848596351CF585F3000BCC74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				8485965E1CF5870B000BCC74 /* Source */,
 				848596521CF586E0000BCC74 /* ViewControllers */,
 				8485962B1CF585F3000BCC74 /* AppDelegate.swift */,
-				8485962D1CF585F3000BCC74 /* ViewController.swift */,
 				8485962F1CF585F3000BCC74 /* Main.storyboard */,
 				848596321CF585F3000BCC74 /* Assets.xcassets */,
 				848596341CF585F3000BCC74 /* LaunchScreen.storyboard */,
@@ -408,7 +405,6 @@
 				TargetAttributes = {
 					848596271CF585F3000BCC74 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LEAZS7L33U;
 					};
 					8485963B1CF585F3000BCC74 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -486,7 +482,6 @@
 				8485965B1CF586F7000BCC74 /* DemoCollectionViewCell.swift in Sources */,
 				8485966A1CF58853000BCC74 /* ExpandingTableViewController.swift in Sources */,
 				8485967B1CF5897B000BCC74 /* ScreenShotHelper.swift in Sources */,
-				8485962E1CF585F3000BCC74 /* ViewController.swift in Sources */,
 				848596721CF58954000BCC74 /* CornerAnimatable.swift in Sources */,
 				8422CA741CF73EE4007E8522 /* Rotatable.swift in Sources */,
 				8485965D1CF586F7000BCC74 /* DemoViewController.swift in Sources */,
