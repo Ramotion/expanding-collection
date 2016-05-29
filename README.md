@@ -28,7 +28,9 @@ pod 'expanding-collection', '~> 0.0.2'
 ```
 ## Usage
 
-`import expanding_collection`
+```swift
+import expanding_collection
+```
 
 #### Create CollectionViewCell
 ![cell](./images/image2.png)
@@ -48,7 +50,7 @@ pod 'expanding-collection', '~> 0.0.2'
 
 4) Cell example [DemoCell](https://github.com/Ramotion/expanding-collection/tree/master/DemoExpandingCollection/DemoExpandingCollection/ViewControllers/DemoViewController/Cells)
 
-######   If set `tag = 101` for any `FrontView.subviews` this view will be hidden during the transition animation
+###### If set `tag = 101` for any `FrontView.subviews` this view will be hidden during the transition animation
 
 #### Create CollectionViewController  
 
@@ -56,16 +58,16 @@ pod 'expanding-collection', '~> 0.0.2'
 
 2) Register Cell and set Cell size:
 
-  ``` swift
-  override func viewDidLoad() {
-      itemSize = CGSize(width: 214, height: 264)
-      super.viewDidLoad()
+``` swift
+override func viewDidLoad() {
+    itemSize = CGSize(width: 214, height: 264)
+    super.viewDidLoad()
 
-      // register cell
-      let nib = UINib(nibName: "CellIdentifier", bundle: nil)
-      collectionView?.registerNib(nib, forCellWithReuseIdentifier: String(DemoCollectionViewCell))
-  }
-  ```
+    // register cell
+    let nib = UINib(nibName: "CellIdentifier", bundle: nil)
+    collectionView?.registerNib(nib, forCellWithReuseIdentifier: String(DemoCollectionViewCell))
+}
+```
 
 3) Add UICollectionViewDataSource methods
 
@@ -86,6 +88,7 @@ extension YourViewController {
 
 4) Open Cell animation
 
+```swift
 override func viewDidLoad() {
     itemSize = CGSize(width: 214, height: 264)
     super.viewDidLoad()
@@ -94,6 +97,7 @@ override func viewDidLoad() {
     let nib = UINib(nibName: "CellIdentifier", bundle: nil)
     collectionView?.registerNib(nib, forCellWithReuseIdentifier: String(DemoCollectionViewCell))
 }
+```
 
 ``` swift
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
