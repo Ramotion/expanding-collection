@@ -38,7 +38,7 @@ import expanding_collection
 1) Create UICollectionViewCell inherit from `BasePageCollectionCell` (recommend create cell with xib file)
 
 2) Adding FrontView
-  - add a view to YOUCELL.xib and connect it to `@IBOutlet weak var frontContainerView: UIView!`  
+  - add a view to YOURCELL.xib and connect it to `@IBOutlet weak var frontContainerView: UIView!`  
   - add width, height, centerX and centerY constraints (width and height constranints must equal cellSize)
 
   ![cell](./images/image1.png)  
