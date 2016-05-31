@@ -130,9 +130,9 @@ override func viewDidLoad() {
 4) For back transition use `popTransitionAnimation()`
 
 
-## Licence
+## License
 
-Epanding collection is released under the MIT license.
+Expanding collection is released under the MIT license.
 See [LICENSE](./LICENSE) for details.
 
 ## About
