@@ -100,10 +100,9 @@ override func viewDidLoad() {
 ```
 
 ``` swift
-  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-
-      cell.cellIsOpen(!cell.isOpened)
-    }
+func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    cell.cellIsOpen(!cell.isOpened)
+}
 ```
 
 #### Transition animation
