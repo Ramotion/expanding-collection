@@ -25,7 +25,7 @@ Just add the Source folder to your project.
 
 or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
-pod 'expanding-collection', '~> 0.0.3'
+pod 'expanding-collection' 
 ```
 or [Carthage](https://github.com/Carthage/Carthage) users can simply add Mantle to their `Cartfile`:
 ```
