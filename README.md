@@ -5,6 +5,7 @@
 [![Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)](http://twitter.com/Ramotion)
 [![CocoaPods](https://img.shields.io/cocoapods/p/expanding-collection.svg)](https://cocoapods.org/pods/expanding-collection)
 [![CocoaPods](https://img.shields.io/cocoapods/v/expanding-collection.svg)](http://cocoapods.org/pods/expanding-collection)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Ramotion/expanding-collection)
 [![Travis](https://travis-ci.org/Ramotion/elastic-pull-to-update.svg?branch=master)](https://travis-ci.org/Ramotion/elastic-pull-to-update)
 [![codebeat badge](https://codebeat.co/badges/6a009992-5bf2-4730-aa35-f3b20ce7693d)](https://codebeat.co/projects/github-com-ramotion-expanding-collection)
 
@@ -24,8 +25,13 @@ Just add the Source folder to your project.
 
 or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
-pod 'expanding-collection', '~> 0.0.2'
+pod 'expanding-collection', '~> 0.0.3'
 ```
+or [Carthage](https://github.com/Carthage/Carthage) users can simply add Mantle to their `Cartfile`:
+```
+github "Ramotion/expanding-collection"
+```
+
 ## Usage
 
 ```swift
