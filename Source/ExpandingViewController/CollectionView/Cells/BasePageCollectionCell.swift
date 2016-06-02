@@ -25,11 +25,11 @@ public class BasePageCollectionCell: UICollectionViewCell {
   
   // MARK: Vars
 
-  @IBOutlet weak var frontContainerView: UIView!
-  @IBOutlet weak var backContainerView: UIView!
+  @IBOutlet public weak var frontContainerView: UIView!
+  @IBOutlet public weak var backContainerView: UIView!
   
-  @IBOutlet weak var backConstraintY: NSLayoutConstraint!
-  @IBOutlet weak var frontConstraintY: NSLayoutConstraint!
+  @IBOutlet public weak var backConstraintY: NSLayoutConstraint!
+  @IBOutlet public weak var frontConstraintY: NSLayoutConstraint!
   
   var shadowView: UIView?
   public var isOpened = false
