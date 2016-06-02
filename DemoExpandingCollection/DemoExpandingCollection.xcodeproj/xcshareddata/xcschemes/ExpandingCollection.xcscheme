@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "848596271CF585F3000BCC74"
-               BuildableName = "DemoExpandingCollection.app"
-               BlueprintName = "DemoExpandingCollection"
-               ReferencedContainer = "container:DemoExpandingCollection.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8485963B1CF585F3000BCC74"
-               BuildableName = "DemoExpandingCollectionTests.xctest"
-               BlueprintName = "DemoExpandingCollectionTests"
+               BlueprintIdentifier = "8499D8131D001B82004B5B37"
+               BuildableName = "ExpandingCollection.framework"
+               BlueprintName = "ExpandingCollection"
                ReferencedContainer = "container:DemoExpandingCollection.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "848596271CF585F3000BCC74"
-            BuildableName = "DemoExpandingCollection.app"
-            BlueprintName = "DemoExpandingCollection"
-            ReferencedContainer = "container:DemoExpandingCollection.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -65,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "848596271CF585F3000BCC74"
-            BuildableName = "DemoExpandingCollection.app"
-            BlueprintName = "DemoExpandingCollection"
+            BlueprintIdentifier = "8499D8131D001B82004B5B37"
+            BuildableName = "ExpandingCollection.framework"
+            BlueprintName = "ExpandingCollection"
             ReferencedContainer = "container:DemoExpandingCollection.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -84,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "848596271CF585F3000BCC74"
-            BuildableName = "DemoExpandingCollection.app"
-            BlueprintName = "DemoExpandingCollection"
+            BlueprintIdentifier = "8499D8131D001B82004B5B37"
+            BuildableName = "ExpandingCollection.framework"
+            BlueprintName = "ExpandingCollection"
             ReferencedContainer = "container:DemoExpandingCollection.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
