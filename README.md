@@ -65,7 +65,7 @@ override func viewDidLoad() {
 
     // register cell
     let nib = UINib(nibName: "CellIdentifier", bundle: nil)
-    collectionView?.registerNib(nib, forCellWithReuseIdentifier: String(DemoCollectionViewCell))
+    collectionView?.registerNib(nib, forCellWithReuseIdentifier: "CellIdentifier")
 }
 ```
 
