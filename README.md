@@ -70,8 +70,8 @@ override func viewDidLoad() {
     super.viewDidLoad()
 
     // register cell
-    let nib = UINib(nibName: "CellIdentifier", bundle: nil)
-    collectionView?.registerNib(nib, forCellWithReuseIdentifier: String(DemoCollectionViewCell))
+    let nib = UINib(nibName: "NibName", bundle: nil)
+    collectionView?.registerNib(nib, forCellWithReuseIdentifier: "CellIdentifier")
 }
 ```
 
