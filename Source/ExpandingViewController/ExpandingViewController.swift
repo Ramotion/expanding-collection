@@ -17,8 +17,13 @@ public class ExpandingViewController: UIViewController {
   public var currentIndex: Int {
     guard let collectionView = self.collectionView else { return 0 }
     
-    let startOffset = (collectionView.bounds.size.width - itemSize.width) / 2
-    return Int((collectionView.contentOffset.x + startOffset) / (itemSize.width + 25))
+    let startOffset = (collectionView.bounds.size.width - itemSize.width) / 2 
+    guard let collectionLayout  = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+      return 0
+    }
+    
+    let minimumLineSpacing = collectionLayout.minimumLineSpacing
+    return Int((collectionView.contentOffset.x + startOffset + itemSize.width / 2) / (itemSize.width + minimumLineSpacing))
   }
 }
 
