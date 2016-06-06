@@ -41,7 +41,7 @@ extension DemoViewController {
   }
   
   private func fillCellIsOpeenArry() {
-    for _ in 0..<items.count {
+    for _ in items {
       cellsIsOpen.append(false)
     }
   }
@@ -75,15 +75,13 @@ extension DemoViewController {
 
   func swipeHandler(sender: UISwipeGestureRecognizer) {
     let indexPath = NSIndexPath(forRow: currentIndex, inSection: 0)
-    guard case let cell as DemoCollectionViewCell = collectionView?.cellForItemAtIndexPath(indexPath) else {
-      return
-    }
+    guard let cell  = collectionView?.cellForItemAtIndexPath(indexPath) as? DemoCollectionViewCell else { return }
     
     // double swipe Up transition
     if cell.isOpened == true && sender.direction == .Up {
       pushToViewController(getViewController())
       
-      if case let rightButton as AnimatingBarButton = navigationItem.rightBarButtonItem {
+      if let rightButton = navigationItem.rightBarButtonItem as? AnimatingBarButton {
         rightButton.animationSelected(true)
       }
     }
@@ -108,9 +106,8 @@ extension DemoViewController {
 extension DemoViewController {
   
   func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-    guard case let cell as DemoCollectionViewCell = cell else {
-      return
-    }
+    guard let cell = cell as? DemoCollectionViewCell else { return }
+
     let index = indexPath.row % 4
     let info = items[index]
     cell.backgroundImageView?.image = UIImage(named: info.imageName)
@@ -119,17 +116,15 @@ extension DemoViewController {
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    guard case let cell as DemoCollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath) else {
-      return
-    }
-    if currentIndex != indexPath.row { return }
-    
+    guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DemoCollectionViewCell
+          where currentIndex == indexPath.row else { return }
+
     if cell.isOpened == false {
       cell.cellIsOpen(true)
     } else {
       pushToViewController(getViewController())
       
-      if case let rightButton as AnimatingBarButton = navigationItem.rightBarButtonItem {
+      if let rightButton = navigationItem.rightBarButtonItem as? AnimatingBarButton {
         rightButton.animationSelected(true)
       }
     }
@@ -148,4 +143,3 @@ extension DemoViewController {
     return collectionView.dequeueReusableCellWithReuseIdentifier(String(DemoCollectionViewCell), forIndexPath: indexPath)
   }
 }
-

@@ -9,12 +9,12 @@
 import UIKit
 
 protocol Rotatable {
-  
+
   func rotateAnimationFrom(fromItem: UIView, toItem: UIView, duration: Double) 
 }
 
 extension Rotatable {
-  
+
   func rotateAnimationFrom(fromItem: UIView, toItem: UIView, duration: Double) {
     
     let fromRotate  = animationFrom(0, to: M_PI, key: "transform.rotation", duration: duration)
@@ -36,7 +36,7 @@ extension Rotatable {
       $0.fromValue           = from
       $0.toValue             = to
       $0.fillMode            = kCAFillModeForwards
-      $0.removedOnCompletion = false;
+      $0.removedOnCompletion = false
     }
   }
 }

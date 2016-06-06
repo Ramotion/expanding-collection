@@ -33,8 +33,10 @@ extension DemoTableViewController {
   
   @IBAction func backButtonHandler(sender: AnyObject) {
     // buttonAnimation
-    for case let viewController as DemoViewController in navigationController!.viewControllers {
-      if case let rightButton as AnimatingBarButton = viewController.navigationItem.rightBarButtonItem {
+    let viewControllers: [DemoViewController?] = navigationController?.viewControllers.map { $0 as? DemoViewController } ?? []
+
+    for viewController in viewControllers {
+      if let rightButton = viewController?.navigationItem.rightBarButtonItem as? AnimatingBarButton {
         rightButton.animationSelected(false)
       }
     }
@@ -49,8 +51,10 @@ extension DemoTableViewController {
   override func scrollViewDidScroll(scrollView: UIScrollView) {
     if scrollView.contentOffset.y < -25 {
       // buttonAnimation
-      for case let viewController as DemoViewController in navigationController!.viewControllers {
-        if case let rightButton as AnimatingBarButton = viewController.navigationItem.rightBarButtonItem {
+      let viewControllers: [DemoViewController?] = navigationController?.viewControllers.map { $0 as? DemoViewController } ?? []
+
+      for viewController in viewControllers {
+        if let rightButton = viewController?.navigationItem.rightBarButtonItem as? AnimatingBarButton {
           rightButton.animationSelected(false)
         }
       }
