@@ -58,10 +58,8 @@ extension AnimatingBarButton {
   }
 
   private func configureImageView(imageView: UIImageView, imageName: String) {
-    guard let customView = self.customView else {
-      return
-    }
-    
+    guard let customView = customView else { return }
+
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.image = UIImage(named: imageName)
     imageView.contentMode = .ScaleAspectFit
@@ -85,5 +83,4 @@ extension AnimatingBarButton {
       }
     }
   }
-
 }
