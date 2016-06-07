@@ -135,7 +135,7 @@ extension DemoViewController {
 extension DemoViewController {
   
   override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 100//items.count
+    return items.count
   }
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
