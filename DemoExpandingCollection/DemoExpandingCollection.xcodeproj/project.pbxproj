@@ -493,6 +493,7 @@
 				TargetAttributes = {
 					848596271CF585F3000BCC74 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LEAZS7L33U;
 					};
 					8485963B1CF585F3000BCC74 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -500,6 +501,7 @@
 					};
 					8499D8131D001B82004B5B37 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LEAZS7L33U;
 					};
 				};
 			};
@@ -810,7 +812,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.ExpandingCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -833,7 +835,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.ExpandingCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -879,6 +881,7 @@
 				8499D81E1D001B82004B5B37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,7 +17,7 @@ public class ExpandingViewController: UIViewController {
   public var currentIndex: Int {
     guard let collectionView = self.collectionView else { return 0 }
     
-    let startOffset = (collectionView.bounds.size.width - itemSize.width) / 2 
+    let startOffset = (collectionView.bounds.size.width - itemSize.width) / 2
     guard let collectionLayout  = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
       return 0
     }

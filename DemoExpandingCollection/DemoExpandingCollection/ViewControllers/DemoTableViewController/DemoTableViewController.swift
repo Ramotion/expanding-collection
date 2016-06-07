@@ -14,7 +14,7 @@ class DemoTableViewController: ExpandingTableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureNavBar()
-    let image1 = Asset.BackgroundImage.image
+    let image1 = UIImage.Asset.BackgroundImage.image
     tableView.backgroundView = UIImageView(image: image1)
   }
 }
