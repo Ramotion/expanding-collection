@@ -76,7 +76,6 @@ extension DemoViewController {
   func swipeHandler(sender: UISwipeGestureRecognizer) {
     let indexPath = NSIndexPath(forRow: currentIndex, inSection: 0)
     guard let cell  = collectionView?.cellForItemAtIndexPath(indexPath) as? DemoCollectionViewCell else { return }
-   print(collectionView!.contentOffset.x) 
     // double swipe Up transition
     if cell.isOpened == true && sender.direction == .Up {
       pushToViewController(getViewController())
@@ -98,7 +97,6 @@ extension DemoViewController {
   
   func scrollViewDidScroll(scrollView: UIScrollView) {
     pageLabel.text = "\(currentIndex+1)/\(items.count)"
-    print(collectionView?.contentOffset.x)
   }
 }
 
@@ -120,7 +118,6 @@ extension DemoViewController {
     guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? DemoCollectionViewCell
           where currentIndex == indexPath.row else { return }
 
-    print(collectionView.contentOffset.x)
     if cell.isOpened == false {
       cell.cellIsOpen(true)
     } else {
