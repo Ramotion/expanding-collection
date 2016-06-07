@@ -24,10 +24,22 @@ extension ExpandingTableViewController {
   
   private func getScreen() -> UIImage? {
     let height = (headerHeight - tableView.contentOffset.y) < 0 ? 0 : (headerHeight - tableView.contentOffset.y)
-    let backImageSize = CGSize(width: view.bounds.width, height: view.bounds.height - height)
+    let backImageSize = CGSize(width: view.bounds.width, height: view.bounds.height - height + getTabBarHeight())
     let backImageOrigin = CGPoint(x: 0, y: height + tableView.contentOffset.y)
     return view.takeSnapshot(CGRect(origin: backImageOrigin, size: backImageSize))
   }
+  
+  private func getTabBarHeight() -> CGFloat {
+    guard let navigationController = self.navigationController else {
+      return 0
+    }
+    
+    let insets = automaticallyAdjustsScrollViewInsets
+    let tabBarHeight =  insets == true ? navigationController.navigationBar.frame.size.height : 0
+    let stausBarHeight = insets == true ? UIApplication.sharedApplication().statusBarFrame.size.height : 0
+    return tabBarHeight + stausBarHeight
+  }
+
 }
 
 // MARK: Methods
@@ -43,7 +55,10 @@ extension ExpandingTableViewController {
     }
     
     let backImage = getScreen()
-    let offset = tableView.contentOffset.y > headerHeight ? headerHeight : tableView.contentOffset.y
+    var offset = tableView.contentOffset.y > headerHeight ? headerHeight : tableView.contentOffset.y
+    
+    offset += getTabBarHeight()
+ 
     transitionDriver.popTransitionAnimationContantOffset(offset, backImage: backImage)
     self.navigationController?.popViewControllerAnimated(false)
   }

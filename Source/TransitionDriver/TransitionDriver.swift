@@ -45,6 +45,7 @@ extension TransitionDriver {
                                     collecitionView: UICollectionView,
                                     backImage: UIImage?,
                                     headerHeight: CGFloat,
+                                    insets: CGFloat,
                                     completion: UIView -> Void) {
     
     guard case let cell as BasePageCollectionCell = collecitionView.cellForItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0)),
@@ -60,8 +61,8 @@ extension TransitionDriver {
     configurateCell(copyView, backImage: backImage)
     backImageView = addImageToView(copyView.backContainerView, image: backImage)
     
-    openBackViewConfigureConstraints(copyView, height: headerHeight)
-    openFrontViewConfigureConstraints(copyView, height: headerHeight)
+    openBackViewConfigureConstraints(copyView, height: headerHeight, insets: insets)
+    openFrontViewConfigureConstraints(copyView, height: headerHeight, insets: insets)
     
     // corner animation 
     copyView.backContainerView.animationCornerRadius(0, duration: duration)
@@ -188,7 +189,7 @@ extension TransitionDriver {
 
 extension TransitionDriver {
   
-  private func openFrontViewConfigureConstraints(cell: BasePageCollectionCell, height: CGFloat) {
+  private func openFrontViewConfigureConstraints(cell: BasePageCollectionCell, height: CGFloat, insets: CGFloat) {
     
     if let heightConstraint = cell.frontContainerView.getConstraint(.Height) {
       frontViewFrame.size.height = heightConstraint.constant
@@ -201,10 +202,10 @@ extension TransitionDriver {
     }
     
     frontViewFrame.origin.y        = cell.frontConstraintY.constant
-    cell.frontConstraintY.constant = -view.bounds.size.height / 2 + height / 2
+    cell.frontConstraintY.constant = -view.bounds.size.height / 2 + height / 2 + insets
   }
   
-  private func openBackViewConfigureConstraints(cell: BasePageCollectionCell, height: CGFloat) {
+  private func openBackViewConfigureConstraints(cell: BasePageCollectionCell, height: CGFloat, insets: CGFloat) {
     
     if let heightConstraint = cell.backContainerView.getConstraint(.Height) {
       backViewFrame.size.height = heightConstraint.constant
@@ -217,7 +218,7 @@ extension TransitionDriver {
     }
     
     backViewFrame.origin.y        = cell.backConstraintY.constant
-    cell.backConstraintY.constant = view.bounds.size.height / 2 - (view.bounds.size.height - 236) / 2
+    cell.backConstraintY.constant = view.bounds.size.height / 2 - (view.bounds.size.height - 236) / 2 + insets
   }
   
   private func closeBackViewConfigurationConstraints(cell: BasePageCollectionCell?) {
