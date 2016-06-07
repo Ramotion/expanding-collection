@@ -8,12 +8,18 @@
 
 import UIKit
 
+/// UIViewController with UICollectionView with custom transition method
 public class ExpandingViewController: UIViewController {
   
+  /// The default size to use for cells.
   public var itemSize = CGSize(width: 256, height: 335)
+  
+  ///  The collection view object managed by this view controller.
   public var collectionView: UICollectionView?
+  
   private var transitionDriver: TransitionDriver?
   
+  /// Index of current cell
   public var currentIndex: Int {
     guard let collectionView = self.collectionView else { return 0 }
     
@@ -41,6 +47,11 @@ extension ExpandingViewController {
 
 public extension ExpandingViewController {
   
+  /**
+   Pushes a view controller onto the receiver’s stack and updates the display with custom animation.
+   
+   - parameter viewController: The table view controller to push onto the stack. 
+   */
   func pushToViewController(viewController: ExpandingTableViewController) {
     guard let collectionView = self.collectionView else {
       return

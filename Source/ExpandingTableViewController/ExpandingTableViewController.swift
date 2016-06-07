@@ -8,16 +8,14 @@
 
 import UIKit
 
+/// Base class for UITableViewcontroller which have back transition method
 public class ExpandingTableViewController: UITableViewController {
   
   // MARK: Vars
-
+  /// The height of the table view header
   public var headerHeight: CGFloat = 236
-  var transitionDriver: TransitionDriver?
   
-  public required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
- }
+  var transitionDriver: TransitionDriver?
 }
 
 // MARK: Helpers 
@@ -31,10 +29,14 @@ extension ExpandingTableViewController {
     return view.takeSnapshot(CGRect(origin: backImageOrigin, size: backImageSize))
   }
 }
-// MARK: Public
+
+// MARK: Methods
 
 extension ExpandingTableViewController {
   
+  /**
+   Pops the top view controller from the navigation stack and updates the display with custom animation.
+   */
   public func popTransitionAnimation() {
     guard let transitionDriver = self.transitionDriver else {
       return

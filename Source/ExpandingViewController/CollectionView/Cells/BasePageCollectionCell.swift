@@ -8,9 +8,11 @@
 
 import UIKit
 
+/// Base class for UICollectionViewCell
 public class BasePageCollectionCell: UICollectionViewCell {
   
-  @IBInspectable public var openSize: CGFloat = 40
+  /// Animation oposition offset when cell is open
+  @IBInspectable public var yOffset: CGFloat = 40
   
   // MARK: Constants
   
@@ -25,23 +27,43 @@ public class BasePageCollectionCell: UICollectionViewCell {
   
   // MARK: Vars
 
+  /// The view used as the face of the cell must connectid from xib or storyboard.
   @IBOutlet public weak var frontContainerView: UIView!
+  /// The view used as the back of the cell must connectid from xib or storyboard.
   @IBOutlet public weak var backContainerView: UIView!
   
+  /// constraints for backContainerView must connectid from xib or storyboard
   @IBOutlet public weak var backConstraintY: NSLayoutConstraint!
+  /// constraints for frontContainerView must connectid from xib or storyboard
   @IBOutlet public weak var frontConstraintY: NSLayoutConstraint!
   
   var shadowView: UIView?
+  
+  /// A Boolean value that indicates whether the cell is opened.
   public var isOpened = false
   
   // MARK: inits
   
+  /**
+   Initializes a UICollectionViewCell from data in a given unarchiver.
+   
+   - parameter aDecoder: An unarchiver object.
+   
+   - returns: An initialized UICollectionViewCell object.
+   */
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
     configureOutletFromDecoder(aDecoder)
   }
   
+  /**
+   Initializes and returns a newly allocated view object with the specified frame rectangle.
+   
+   - parameter frame: The frame rectangle for the view
+   
+   - returns: An initialized UICollectionViewCell object.
+   */
   override init(frame: CGRect) {
     super.init(frame: frame)
     
@@ -70,18 +92,24 @@ extension BasePageCollectionCell {
 
 extension BasePageCollectionCell {
   
+  /**
+   Open or close cell.
+   
+   - parameter isOpen: Contains the value true if the cell should display open state, if false should display close state.
+   - parameter animated: Set to true if the change in selection state is animated.
+   */
   public func cellIsOpen(isOpen: Bool, animated: Bool = true) {
     if isOpen == isOpened { return }
     
     frontConstraintY.constant = isOpen == true ? -bounds.size.height / 5 : 0
-    backConstraintY.constant  = isOpen == true ? bounds.size.height / 5 - openSize / 2 : 0
+    backConstraintY.constant  = isOpen == true ? bounds.size.height / 5 - yOffset / 2 : 0
     
     if let widthConstant = backContainerView.getConstraint(.Width) {
-      widthConstant.constant = isOpen == true ? contentView.bounds.size.width + openSize : contentView.bounds.size.width
+      widthConstant.constant = isOpen == true ? contentView.bounds.size.width + yOffset : contentView.bounds.size.width
     }
     
     if let heightConstant = backContainerView.getConstraint(.Height) {
-      heightConstant.constant = isOpen == true ? contentView.bounds.size.height + openSize : contentView.bounds.size.height
+      heightConstant.constant = isOpen == true ? contentView.bounds.size.height + yOffset : contentView.bounds.size.height
     }
     
     if animated == true {
