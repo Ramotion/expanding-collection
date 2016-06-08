@@ -113,6 +113,24 @@ func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath i
 }
 ```
 
+###### if you use this delegates method:
+```Swift
+func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath)
+
+func scrollViewDidEndDecelerating(scrollView: UIScrollView)
+```
+###### must call super method:  
+```Swift
+func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+  super.collectionView(collectionView: collectionView, willDisplayCell cell: cell, forItemAtIndexPath indexPath: indexPath)
+  // code
+}
+
+func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+  super.scrollViewDidEndDecelerating(scrollView: scrollView)
+  // code
+}
+```
 #### Transition animation
 
 1) Create a UITableViewController inheriting from `ExpandingTableViewController`
