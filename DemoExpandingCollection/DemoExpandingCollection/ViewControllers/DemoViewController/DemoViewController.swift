@@ -22,6 +22,7 @@ class DemoViewController: ExpandingViewController {
 extension DemoViewController {
   
   override func viewDidLoad() {
+    itemSize = CGSize(width: 256, height: 335)
     super.viewDidLoad()
     
     registerCell()
@@ -104,7 +105,8 @@ extension DemoViewController {
 
 extension DemoViewController {
   
-  func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+  override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    super.collectionView(collectionView, willDisplayCell: cell, forItemAtIndexPath: indexPath)
     guard let cell = cell as? DemoCollectionViewCell else { return }
 
     let index = indexPath.row % items.count

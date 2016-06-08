@@ -188,7 +188,19 @@ extension BasePageCollectionCell {
     frame.origin.x -= yOffset / 2
     frame.size.width += yOffset
   }
-
+  
+  
+  func configureCellViewConstraintsWithSize(size: CGSize) {
+    guard isOpened == false && frontContainerView.getConstraint(.Width)?.constant != size.width else { return }
+    
+    [frontContainerView, backContainerView].forEach {
+      let constraintWidth = $0.getConstraint(.Width)
+      constraintWidth?.constant = size.width
+      
+      let constraintHeight = $0.getConstraint(.Height)
+      constraintHeight?.constant = size.height
+    }
+  }
 }
 
 // MARK: NSCoding
