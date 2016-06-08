@@ -101,16 +101,19 @@ extension BasePageCollectionCell {
   public func cellIsOpen(isOpen: Bool, animated: Bool = true) {
     if isOpen == isOpened { return }
     
-    frontConstraintY.constant = isOpen == true ? -bounds.size.height / 5 : 0
-    backConstraintY.constant  = isOpen == true ? bounds.size.height / 5 - yOffset / 2 : 0
+    frontConstraintY.constant = isOpen == true ? -frontContainerView.bounds.size.height / 5 : 0
+    backConstraintY.constant  = isOpen == true ? frontContainerView.bounds.size.height / 5 - yOffset / 2 : 0
     
     if let widthConstant = backContainerView.getConstraint(.Width) {
-      widthConstant.constant = isOpen == true ? contentView.bounds.size.width + yOffset : contentView.bounds.size.width
+      widthConstant.constant = isOpen == true ? frontContainerView.bounds.size.width + yOffset : frontContainerView.bounds.size.width
     }
     
     if let heightConstant = backContainerView.getConstraint(.Height) {
-      heightConstant.constant = isOpen == true ? contentView.bounds.size.height + yOffset : contentView.bounds.size.height
+      heightConstant.constant = isOpen == true ? frontContainerView.bounds.size.height + yOffset : frontContainerView.bounds.size.height
     }
+    
+    configurationCell()
+
     
     if animated == true {
       UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations: {
@@ -178,6 +181,14 @@ extension BasePageCollectionCell {
     
     return shadow
   }
+  
+  func configurationCell() {
+    frame.size.height += (superview?.frame.size.height)!
+    frame.origin.y -= (superview?.frame.size.height)! / 2
+    frame.origin.x -= yOffset / 2
+    frame.size.width += yOffset
+  }
+
 }
 
 // MARK: NSCoding

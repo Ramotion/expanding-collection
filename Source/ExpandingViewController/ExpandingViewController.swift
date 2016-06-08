@@ -105,7 +105,7 @@ extension ExpandingViewController {
 
 // MARK: UICollectionViewDataSource
 
-extension ExpandingViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension ExpandingViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
   public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     fatalError("need emplementation in subclass")
@@ -113,6 +113,18 @@ extension ExpandingViewController: UICollectionViewDataSource, UICollectionViewD
   
   public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     fatalError("need emplementation in subclass")
+  }
+}
+
+// MARK: UIScrollViewDelegate 
+
+extension ExpandingViewController {
+  
+  public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    let indexPath = NSIndexPath(forRow: currentIndex, inSection: 0)
+    if case let currentCell as BasePageCollectionCell = collectionView?.cellForItemAtIndexPath(indexPath) {
+      currentCell.configurationCell()
+    }
   }
 }
 
