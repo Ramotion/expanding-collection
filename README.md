@@ -1,4 +1,4 @@
-![header](./header.png)
+![header](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/header.png)
 
 # expanding-collection
 
@@ -12,7 +12,7 @@
 [![codebeat badge](https://codebeat.co/badges/6a009992-5bf2-4730-aa35-f3b20ce7693d)](https://codebeat.co/projects/github-com-ramotion-expanding-collection)
 
 [shot on dribbble](https://dribbble.com/shots/2741477-iOS-Expanding-Collection-Open-Source):
-![Animation](preview.gif)
+![Animation](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/preview.gif)
 
 The [iPhone mockup](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection) available [here](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection).
 
@@ -41,7 +41,7 @@ import ExpandingCollection
 ```
 
 #### Create CollectionViewCell
-![cell](./images/image2.png)
+![cell](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/images/image2.png)
 
 1) Create UICollectionViewCell inherit from `BasePageCollectionCell` (recommend create cell with xib file)
 
@@ -49,7 +49,7 @@ import ExpandingCollection
   - add a view to YOURCELL.xib and connect it to `@IBOutlet weak var frontContainerView: UIView!`  
   - add width, height, centerX and centerY constraints (width and height constranints must equal cellSize)
 
-  ![cell](./images/image1.png)  
+  ![cell](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/images/image1.png)  
   - connect centerY constraint to `@IBOutlet weak var frontConstraintY: NSLayoutConstraint!`
   - add any desired uiviews to frontView
 
