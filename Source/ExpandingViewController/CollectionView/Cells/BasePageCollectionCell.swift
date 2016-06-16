@@ -182,13 +182,18 @@ extension BasePageCollectionCell {
     return shadow
   }
   
-  func configurationCell() {
-    frame.size.height += (superview?.frame.size.height)!
-    frame.origin.y -= (superview?.frame.size.height)! / 2
-    frame.origin.x -= yOffset / 2
-    frame.size.width += yOffset
-  }
-  
+	
+	func configurationCell() {
+		// Prevents indefinite growing of the cell issue
+		let i: CGFloat = self.isOpened ? 1 : -1
+		let superHeight = superview?.frame.size.height ?? 0
+		
+		frame.size.height += i * superHeight
+		frame.origin.y -= i * superHeight / 2
+		frame.origin.x -= i * yOffset / 2
+		frame.size.width += i * yOffset
+	}
+	
   
   func configureCellViewConstraintsWithSize(size: CGSize) {
     guard isOpened == false && frontContainerView.getConstraint(.Width)?.constant != size.width else { return }
