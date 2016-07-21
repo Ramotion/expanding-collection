@@ -1,4 +1,4 @@
-![header](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/header.png)
+[![header](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/header.png)](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection-logo)
 
 # expanding-collection
 
@@ -11,7 +11,9 @@
 [![Travis](https://travis-ci.org/Ramotion/elastic-pull-to-update.svg?branch=master)](https://travis-ci.org/Ramotion/elastic-pull-to-update)
 [![codebeat badge](https://codebeat.co/badges/6a009992-5bf2-4730-aa35-f3b20ce7693d)](https://codebeat.co/projects/github-com-ramotion-expanding-collection)
 
-[shot on dribbble](https://dribbble.com/shots/2741477-iOS-Expanding-Collection-Open-Source):
+## About
+Ramotion specializes in building dedicated engineering teams and developing custom software.<br> [Contact our team](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection-contact-us) and we’ll help you work with the best engineers from Eastern Europe.
+
 ![Animation](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/preview.gif)
 
 The [iPhone mockup](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection) available [here](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection).
@@ -160,9 +162,7 @@ override func viewDidLoad() {
 Expanding collection is released under the MIT license.
 See [LICENSE](./LICENSE) for details.
 
-## About
-The project maintained by [app development agency](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection) [Ramotion Inc.](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection)
-See our other [open-source projects](https://github.com/ramotion) or [hire](https://ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection) us to design, develop, and grow your product.
+## Follow us
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/ramotion/expanding-collection)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ramotion.svg?style=social)](https://twitter.com/ramotion)
