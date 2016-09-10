@@ -13,7 +13,7 @@ extension UIView {
     UIGraphicsBeginImageContextWithOptions(frame.size, false, 0.0)
     
     let context = UIGraphicsGetCurrentContext();
-    CGContextTranslateCTM(context, frame.origin.x * -1, frame.origin.y * -1)
+    CGContextTranslateCTM(context!, frame.origin.x * -1, frame.origin.y * -1)
     
     guard let currentContext = UIGraphicsGetCurrentContext() else {
       return nil
