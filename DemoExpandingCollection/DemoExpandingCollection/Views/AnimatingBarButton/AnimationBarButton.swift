@@ -73,6 +73,7 @@ extension AnimatingBarButton {
       (customView, imageView) >>>- {
         $0.attribute = info.0
         $0.constant = CGFloat(info.1)
+        return
       }
     }
     
@@ -80,6 +81,7 @@ extension AnimatingBarButton {
       imageView >>>- {
         $0.attribute = attribute
         $0.constant = 20
+        return
       }
     }
   }

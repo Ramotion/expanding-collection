@@ -162,6 +162,7 @@ extension BasePageCollectionCell {
         shadow >>>- {
           $0.attribute = info.attribute
           $0.constant  = frontViewConstraint.constant * info.scale
+          return
         }
       }
     }
@@ -170,6 +171,7 @@ extension BasePageCollectionCell {
       (contentView, shadow, view) >>>- {
         $0.attribute = info.attribute
         $0.constant  = info.offset
+        return
       }
     }
     

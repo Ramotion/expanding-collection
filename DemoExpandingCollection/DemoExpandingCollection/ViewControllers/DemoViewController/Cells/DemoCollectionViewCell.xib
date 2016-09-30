@@ -163,7 +163,7 @@
             <size key="customSize" width="275" height="575"/>
             <connections>
                 <outlet property="backConstraintY" destination="dmf-qy-2nS" id="szE-V2-yce"/>
-                <outlet property="backContainerView" destination="rbd-6U-uYZ" id="87V-UY-Q1P"/>
+                <outlet property="backContainerView" destination="rbd-6U-uYZ" id="fl2-yE-o3C"/>
                 <outlet property="backgroundImageView" destination="9FK-FA-F0l" id="kns-UF-jMo"/>
                 <outlet property="customTitle" destination="XFh-D7-eSl" id="eia-lY-ptu"/>
                 <outlet property="frontConstraintY" destination="0xA-8H-CCG" id="qOL-jY-lrP"/>

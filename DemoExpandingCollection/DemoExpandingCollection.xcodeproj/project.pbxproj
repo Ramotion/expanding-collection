@@ -493,7 +493,7 @@
 				TargetAttributes = {
 					848596271CF585F3000BCC74 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = LEAZS7L33U;
+						DevelopmentTeam = 34MUF9YXTA;
 						LastSwiftMigration = 0800;
 					};
 					8485963B1CF585F3000BCC74 = {
@@ -757,10 +757,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 34MUF9YXTA;
 				INFOPLIST_FILE = DemoExpandingCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.DemoExpandingCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -774,10 +775,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 34MUF9YXTA;
 				INFOPLIST_FILE = DemoExpandingCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.DemoExpandingCollection;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;

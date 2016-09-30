@@ -134,7 +134,6 @@ extension DemoViewController {
 }
 
 // MARK: UICollectionViewDataSource
-
 extension DemoViewController {
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

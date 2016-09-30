@@ -60,6 +60,6 @@ extension ExpandingTableViewController {
     offset += getTabBarHeight()
  
     transitionDriver.popTransitionAnimationContantOffset(offset, backImage: backImage)
-    let _ = self.navigationController?.popViewController(animated: true)
+    let _ = self.navigationController?.popViewController(animated: false)
   }
 }

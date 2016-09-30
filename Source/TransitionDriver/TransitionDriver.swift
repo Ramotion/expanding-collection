@@ -67,6 +67,7 @@ extension TransitionDriver {
     // corner animation 
     copyView.backContainerView.animationCornerRadius(0, duration: duration)
     copyView.frontContainerView.animationCornerRadius(0, duration: duration)
+    copyView.center = view.center
     
    // constraints animation
     UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(), animations: {
@@ -134,6 +135,7 @@ extension TransitionDriver {
       cell >>>- {
         $0.attribute = info.0
         $0.constant  = info.1
+        return
       }
     }
     

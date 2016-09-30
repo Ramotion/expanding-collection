@@ -36,6 +36,7 @@ extension PageCollectionView {
     collectionView >>>- {
       $0.attribute = .height
       $0.constant  = height
+      return
     }
     [NSLayoutAttribute.left, .right, .centerY].forEach { attribute in
       (view, collectionView) >>>- {
