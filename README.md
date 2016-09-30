@@ -30,7 +30,9 @@ Just add the Source folder to your project.
 
 or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
-pod 'expanding-collection'
+pod 'expanding-collection', '~> 1.0.0' swift 3
+
+pod 'expanding-collection', '~> 0.3.2' swift 2
 ```
 or [Carthage](https://github.com/Carthage/Carthage) users can simply add to their `Cartfile`:
 ```
