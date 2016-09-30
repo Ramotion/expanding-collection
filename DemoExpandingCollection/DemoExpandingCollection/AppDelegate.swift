@@ -14,43 +14,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
 
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     configureNavigationTabBar()
     return true
   }
 
-  func applicationWillResignActive(application: UIApplication) {
+  func applicationWillResignActive(_ application: UIApplication) {
     
   }
 
-  func applicationDidEnterBackground(application: UIApplication) {
+  func applicationDidEnterBackground(_ application: UIApplication) {
    
   }
 
-  func applicationWillEnterForeground(application: UIApplication) {
+  func applicationWillEnterForeground(_ application: UIApplication) {
   }
 
-  func applicationDidBecomeActive(application: UIApplication) {
+  func applicationDidBecomeActive(_ application: UIApplication) {
   }
 
-  func applicationWillTerminate(application: UIApplication) {
+  func applicationWillTerminate(_ application: UIApplication) {
   }
 }
 
 extension AppDelegate {
   
-  private func configureNavigationTabBar() {
+  fileprivate func configureNavigationTabBar() {
     //transparent background
-    UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
+    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
     UINavigationBar.appearance().shadowImage     = UIImage()
-    UINavigationBar.appearance().translucent     = true
+    UINavigationBar.appearance().isTranslucent     = true
     
     let shadow = NSShadow()
     shadow.shadowOffset = CGSize(width: 0, height: 2)
     shadow.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
     
     UINavigationBar.appearance().titleTextAttributes = [
-      NSForegroundColorAttributeName : UIColor.whiteColor(),
+      NSForegroundColorAttributeName : UIColor.white,
       NSShadowAttributeName: shadow
     ]
   }

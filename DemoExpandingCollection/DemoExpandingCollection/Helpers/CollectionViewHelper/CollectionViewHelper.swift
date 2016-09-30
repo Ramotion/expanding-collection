@@ -10,8 +10,8 @@ import UIKit
 
 extension UICollectionView {
 
-  func getReusableCellWithIdentifier<T: UICollectionViewCell where T: CollectionViewCellIdentifiable>(indexPath: NSIndexPath) -> T {
-    guard let cell = dequeueReusableCellWithReuseIdentifier(T.cellIdentifier, forIndexPath: indexPath) as? T else {
+  func getReusableCellWithIdentifier<T: UICollectionViewCell>(_ indexPath: IndexPath) -> T where T: CollectionViewCellIdentifiable {
+    guard let cell = dequeueReusableCell(withReuseIdentifier: T.cellIdentifier, for: indexPath) as? T else {
       fatalError("Couldn't instantiate view controller with identifier \(T.cellIdentifier) ")
     }
     
@@ -27,7 +27,7 @@ protocol CollectionViewCellIdentifiable {
 
 extension CollectionViewCellIdentifiable where Self: UICollectionViewCell {
   static var cellIdentifier: String {
-    return String(self)
+    return String(describing: self)
   }
 }
 

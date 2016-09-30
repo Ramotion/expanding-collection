@@ -16,7 +16,7 @@ class PageCollectionView: UICollectionView {
 
 extension PageCollectionView {
   
-  class func createOnView(view: UIView,
+  class func createOnView(_ view: UIView,
                           layout: UICollectionViewLayout,
                           height:CGFloat,
                           dataSource: UICollectionViewDataSource,
@@ -28,17 +28,20 @@ extension PageCollectionView {
       $0.showsHorizontalScrollIndicator            = false
       $0.dataSource                                = dataSource
       $0.delegate                                  = delegate
-      $0.backgroundColor                           = .clearColor()
+      $0.backgroundColor                           = UIColor(white: 0, alpha: 0)
     }
     view.addSubview(collectionView)
     
     // add constraints
     collectionView >>>- {
-      $0.attribute = .Height
+      $0.attribute = .height
       $0.constant  = height
     }
-    [NSLayoutAttribute.Left, .Right, .CenterY].forEach { attribute in
-      (view, collectionView) >>>- { $0.attribute = attribute }
+    [NSLayoutAttribute.left, .right, .centerY].forEach { attribute in
+      (view, collectionView) >>>- {
+        $0.attribute = attribute
+        return
+        }
     }
     
     return collectionView

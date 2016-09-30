@@ -9,10 +9,10 @@
 import UIKit
 
 /// Base class for UICollectionViewCell
-public class BasePageCollectionCell: UICollectionViewCell {
+open class BasePageCollectionCell: UICollectionViewCell {
   
   /// Animation oposition offset when cell is open
-  @IBInspectable public var yOffset: CGFloat = 40
+  @IBInspectable open var yOffset: CGFloat = 40
   
   // MARK: Constants
   
@@ -28,19 +28,19 @@ public class BasePageCollectionCell: UICollectionViewCell {
   // MARK: Vars
 
   /// The view used as the face of the cell must connectid from xib or storyboard.
-  @IBOutlet public weak var frontContainerView: UIView!
+  @IBOutlet open weak var frontContainerView: UIView!
   /// The view used as the back of the cell must connectid from xib or storyboard.
-  @IBOutlet public weak var backContainerView: UIView!
+  @IBOutlet open weak var backContainerView: UIView!
   
   /// constraints for backContainerView must connectid from xib or storyboard
-  @IBOutlet public weak var backConstraintY: NSLayoutConstraint!
+  @IBOutlet open weak var backConstraintY: NSLayoutConstraint!
   /// constraints for frontContainerView must connectid from xib or storyboard
-  @IBOutlet public weak var frontConstraintY: NSLayoutConstraint!
+  @IBOutlet open weak var frontConstraintY: NSLayoutConstraint!
   
   var shadowView: UIView?
   
   /// A Boolean value that indicates whether the cell is opened.
-  public var isOpened = false
+  open var isOpened = false
   
   // MARK: inits
   
@@ -75,13 +75,13 @@ public class BasePageCollectionCell: UICollectionViewCell {
 
 extension BasePageCollectionCell {
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     
     commonInit()
   }
   
-  private func commonInit() {
+  fileprivate func commonInit() {
     configurationViews()
     shadowView = createShadowViewOnView(frontContainerView)
   }
@@ -98,17 +98,17 @@ extension BasePageCollectionCell {
    - parameter isOpen: Contains the value true if the cell should display open state, if false should display close state.
    - parameter animated: Set to true if the change in selection state is animated.
    */
-  public func cellIsOpen(isOpen: Bool, animated: Bool = true) {
+  public func cellIsOpen(_ isOpen: Bool, animated: Bool = true) {
     if isOpen == isOpened { return }
     
     frontConstraintY.constant = isOpen == true ? -frontContainerView.bounds.size.height / 5 : 0
     backConstraintY.constant  = isOpen == true ? frontContainerView.bounds.size.height / 5 - yOffset / 2 : 0
     
-    if let widthConstant = backContainerView.getConstraint(.Width) {
+    if let widthConstant = backContainerView.getConstraint(.width) {
       widthConstant.constant = isOpen == true ? frontContainerView.bounds.size.width + yOffset : frontContainerView.bounds.size.width
     }
     
-    if let heightConstant = backContainerView.getConstraint(.Height) {
+    if let heightConstant = backContainerView.getConstraint(.height) {
       heightConstant.constant = isOpen == true ? frontContainerView.bounds.size.height + yOffset : frontContainerView.bounds.size.height
     }
     
@@ -116,7 +116,7 @@ extension BasePageCollectionCell {
 
     
     if animated == true {
-      UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseInOut, animations: {
+      UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: {
         self.contentView.layoutIfNeeded()
       }, completion: nil)
     } else {
@@ -131,7 +131,7 @@ extension BasePageCollectionCell {
 
 extension BasePageCollectionCell {
   
-  private func configurationViews() {
+  fileprivate func configurationViews() {
     backContainerView.layer.masksToBounds = true
     backContainerView.layer.cornerRadius  = 5
     
@@ -142,14 +142,14 @@ extension BasePageCollectionCell {
     layer.masksToBounds             = false
   }
   
-  private func createShadowViewOnView(view: UIView?) -> UIView? {
+  fileprivate func createShadowViewOnView(_ view: UIView?) -> UIView? {
     guard let view = view else {return nil}
     
     let shadow = Init(UIView(frame: .zero)) {
-      $0.backgroundColor                           = .clearColor()
+      $0.backgroundColor                           = UIColor(white: 0, alpha: 0)
       $0.translatesAutoresizingMaskIntoConstraints = false
       $0.layer.masksToBounds                       = false;
-      $0.layer.shadowColor                         = UIColor.blackColor().CGColor
+      $0.layer.shadowColor                         = UIColor.black.cgColor
       $0.layer.shadowRadius                        = 10
       $0.layer.shadowOpacity                       = 0.3
       $0.layer.shadowOffset                        = CGSize(width: 0, height:0)
@@ -157,7 +157,7 @@ extension BasePageCollectionCell {
     contentView.insertSubview(shadow, belowSubview: view)
     
     // create constraints
-    for info: (attribute: NSLayoutAttribute, scale: CGFloat)  in [(NSLayoutAttribute.Width, 0.8), (NSLayoutAttribute.Height, 0.9)] {
+    for info: (attribute: NSLayoutAttribute, scale: CGFloat)  in [(NSLayoutAttribute.width, 0.8), (NSLayoutAttribute.height, 0.9)] {
       if let frontViewConstraint = view.getConstraint(info.attribute) {
         shadow >>>- {
           $0.attribute = info.attribute
@@ -166,7 +166,7 @@ extension BasePageCollectionCell {
       }
     }
     
-    for info: (attribute: NSLayoutAttribute, offset: CGFloat)  in [(NSLayoutAttribute.CenterX, 0), (NSLayoutAttribute.CenterY, 30)] {
+    for info: (attribute: NSLayoutAttribute, offset: CGFloat)  in [(NSLayoutAttribute.centerX, 0), (NSLayoutAttribute.centerY, 30)] {
       (contentView, shadow, view) >>>- {
         $0.attribute = info.attribute
         $0.constant  = info.offset
@@ -174,10 +174,10 @@ extension BasePageCollectionCell {
     }
     
     // size shadow
-    let width  = shadow.getConstraint(.Width)?.constant
-    let height = shadow.getConstraint(.Height)?.constant
+    let width  = shadow.getConstraint(.width)?.constant
+    let height = shadow.getConstraint(.height)?.constant
     
-    shadow.layer.shadowPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: width!, height: height!), cornerRadius: 0).CGPath
+    shadow.layer.shadowPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: width!, height: height!), cornerRadius: 0).cgPath
     
     return shadow
   }
@@ -195,14 +195,14 @@ extension BasePageCollectionCell {
 	}
 	
   
-  func configureCellViewConstraintsWithSize(size: CGSize) {
-    guard isOpened == false && frontContainerView.getConstraint(.Width)?.constant != size.width else { return }
+  func configureCellViewConstraintsWithSize(_ size: CGSize) {
+    guard isOpened == false && frontContainerView.getConstraint(.width)?.constant != size.width else { return }
     
     [frontContainerView, backContainerView].forEach {
-      let constraintWidth = $0.getConstraint(.Width)
+      let constraintWidth = $0?.getConstraint(.width)
       constraintWidth?.constant = size.width
       
-      let constraintHeight = $0.getConstraint(.Height)
+      let constraintHeight = $0?.getConstraint(.height)
       constraintHeight?.constant = size.height
     }
   }
@@ -212,10 +212,10 @@ extension BasePageCollectionCell {
 
 extension BasePageCollectionCell {
   
-  private func highlightedImageFalseOnView(view: UIView) {
+  fileprivate func highlightedImageFalseOnView(_ view: UIView) {
     for item in view.subviews {
       if case let imageView as UIImageView = item {
-        imageView.highlighted = false
+        imageView.isHighlighted = false
       }
       if item.subviews.count > 0 {
         highlightedImageFalseOnView(item)
@@ -223,7 +223,7 @@ extension BasePageCollectionCell {
     }
   }
   
-  private func copyShadowFromView(fromView: UIView, toView: UIView) {
+  fileprivate func copyShadowFromView(_ fromView: UIView, toView: UIView) {
     fromView.layer.shadowPath    = toView.layer.shadowPath
     fromView.layer.masksToBounds = toView.layer.masksToBounds
     fromView.layer.shadowColor   = toView.layer.shadowColor
@@ -236,8 +236,8 @@ extension BasePageCollectionCell {
   func copyCell() -> BasePageCollectionCell? {
     highlightedImageFalseOnView(contentView)
     
-    let data = NSKeyedArchiver.archivedDataWithRootObject(self)
-    guard case let copyView as BasePageCollectionCell = NSKeyedUnarchiver.unarchiveObjectWithData(data),
+    let data = NSKeyedArchiver.archivedData(withRootObject: self)
+    guard case let copyView as BasePageCollectionCell = NSKeyedUnarchiver.unarchiveObject(with: data),
       let shadowView = self.shadowView else {
       return nil
     }
@@ -258,33 +258,33 @@ extension BasePageCollectionCell {
     return copyView
   }
   
-  public override func encodeWithCoder(coder: NSCoder) {
-    super.encodeWithCoder(coder)
-    coder.encodeObject(backContainerView, forKey: Constants.backContainer)
-    coder.encodeObject(frontContainerView, forKey: Constants.frontContainer)
-    coder.encodeObject(frontConstraintY, forKey: Constants.frontContainerY)
-    coder.encodeObject(backConstraintY, forKey: Constants.backContainerY)
-    coder.encodeObject(shadowView, forKey: Constants.shadowView)
+  open override func encode(with coder: NSCoder) {
+    super.encode(with: coder)
+    coder.encode(backContainerView, forKey: Constants.backContainer)
+    coder.encode(frontContainerView, forKey: Constants.frontContainer)
+    coder.encode(frontConstraintY, forKey: Constants.frontContainerY)
+    coder.encode(backConstraintY, forKey: Constants.backContainerY)
+    coder.encode(shadowView, forKey: Constants.shadowView)
   }
   
-  private func configureOutletFromDecoder(coder: NSCoder) {
-    if case let shadowView as UIView = coder.decodeObjectForKey(Constants.shadowView) {
+  fileprivate func configureOutletFromDecoder(_ coder: NSCoder) {
+    if case let shadowView as UIView = coder.decodeObject(forKey: Constants.shadowView) {
       self.shadowView = shadowView
     }
     
-    if case let backView as UIView = coder.decodeObjectForKey(Constants.backContainer) {
+    if case let backView as UIView = coder.decodeObject(forKey: Constants.backContainer) {
       backContainerView = backView
     }
     
-    if case let frontView as UIView = coder.decodeObjectForKey(Constants.frontContainer) {
+    if case let frontView as UIView = coder.decodeObject(forKey: Constants.frontContainer) {
       frontContainerView = frontView
     }
     
-    if case let constraint as NSLayoutConstraint = coder.decodeObjectForKey(Constants.frontContainerY) {
+    if case let constraint as NSLayoutConstraint = coder.decodeObject(forKey: Constants.frontContainerY) {
       frontConstraintY = constraint
     }
     
-    if case let constraint as NSLayoutConstraint = coder.decodeObjectForKey(Constants.backContainerY) {
+    if case let constraint as NSLayoutConstraint = coder.decodeObject(forKey: Constants.backContainerY) {
       backConstraintY = constraint
     }
   }

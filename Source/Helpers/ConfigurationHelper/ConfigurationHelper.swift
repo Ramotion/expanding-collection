@@ -8,9 +8,9 @@
 
 import Foundation
 
-@warn_unused_result
-internal func Init<Type>(value : Type, @noescape block: (object: Type) -> Void) -> Type
+
+internal func Init<Type>(_ value : Type, block: (_ object: Type) -> Void) -> Type
 {
-  block(object: value)
+  block(value)
   return value
 }

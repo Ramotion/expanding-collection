@@ -9,16 +9,16 @@
 import UIKit
 
 protocol SubviewsForEach {
-  func subviewsForEach(f: UIView -> Void)
+  func subviewsForEach(_ f: (UIView) -> Void)
 }
 
 extension SubviewsForEach where Self: UIView {
   
-  func subviewsForEach(f: UIView -> Void) {
+  func subviewsForEach(_ f: (UIView) -> Void) {
     forEachView(self, f: f)
   }
   
-  private func forEachView(view: UIView, f: UIView -> Void) {
+  fileprivate func forEachView(_ view: UIView, f: (UIView) -> Void) {
     view.subviews.forEach {
       f($0)
       

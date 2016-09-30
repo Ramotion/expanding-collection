@@ -36,7 +36,7 @@ extension AnimatingBarButton {
 
 extension AnimatingBarButton {
   
-  func animationSelected(selected: Bool) {
+  func animationSelected(_ selected: Bool) {
     if selected {
       rotateAnimationFrom(normalView, toItem: selectedView, duration: duration)
     } else {
@@ -49,7 +49,7 @@ extension AnimatingBarButton {
 
 extension AnimatingBarButton {
   
-  private func configurateImageViews() {
+  fileprivate func configurateImageViews() {
     configureImageView(normalView, imageName: normalImageName)
     configureImageView(selectedView, imageName: selectedImageName)
     
@@ -57,26 +57,26 @@ extension AnimatingBarButton {
 //    normalView.hidden = true
   }
 
-  private func configureImageView(imageView: UIImageView, imageName: String) {
+  fileprivate func configureImageView(_ imageView: UIImageView, imageName: String) {
     guard let customView = customView else { return }
 
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.image = UIImage(named: imageName)
-    imageView.contentMode = .ScaleAspectFit
+    imageView.contentMode = .scaleAspectFit
 //    imageView.backgroundColor = .greenColor()
     
 //    imageView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     customView.addSubview(imageView)
     
     // add constraints
-    [(NSLayoutAttribute.CenterX, 12), (.CenterY, -1)].forEach { info in
+    [(NSLayoutAttribute.centerX, 12), (.centerY, -1)].forEach { info in
       (customView, imageView) >>>- {
         $0.attribute = info.0
         $0.constant = CGFloat(info.1)
       }
     }
     
-    [NSLayoutAttribute.Height, .Width].forEach { attribute in
+    [NSLayoutAttribute.height, .width].forEach { attribute in
       imageView >>>- {
         $0.attribute = attribute
         $0.constant = 20

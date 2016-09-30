@@ -10,7 +10,7 @@ import UIKit
 
 class PageCollectionLayout: UICollectionViewFlowLayout {
   
-  private var lastCollectionViewSize: CGSize = CGSizeZero
+  fileprivate var lastCollectionViewSize: CGSize = CGSize.zero
   
   var scalingOffset: CGFloat      = 200
   var minimumScaleFactor: CGFloat = 0.9
@@ -31,8 +31,8 @@ class PageCollectionLayout: UICollectionViewFlowLayout {
 
 extension PageCollectionLayout {
   
-  private func commonInit(itemSize: CGSize) {
-    scrollDirection    = .Horizontal
+  fileprivate func commonInit(_ itemSize: CGSize) {
+    scrollDirection    = .horizontal
     minimumLineSpacing = 25
     self.itemSize      = itemSize
   }
@@ -42,8 +42,8 @@ extension PageCollectionLayout {
 
 extension PageCollectionLayout {
   
-  override func invalidateLayoutWithContext(context: UICollectionViewLayoutInvalidationContext) {
-    super.invalidateLayoutWithContext(context)
+  override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
+    super.invalidateLayout(with: context)
     
     guard let collectionView = self.collectionView else { return }
     
@@ -53,13 +53,13 @@ extension PageCollectionLayout {
     }
   }
   
-  override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+  override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
     guard let collectionView = self.collectionView else {
       return proposedContentOffset
     }
     
-    let proposedRect = CGRectMake(proposedContentOffset.x, 0, collectionView.bounds.width, collectionView.bounds.height)
-    guard let layoutAttributes = self.layoutAttributesForElementsInRect(proposedRect) else {
+    let proposedRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView.bounds.width, height: collectionView.bounds.height)
+    guard let layoutAttributes = self.layoutAttributesForElements(in: proposedRect) else {
       return proposedContentOffset
     }
     
@@ -67,7 +67,7 @@ extension PageCollectionLayout {
     let proposedContentOffsetCenterX = proposedContentOffset.x + collectionView.bounds.width / 2
     
     for attributes in layoutAttributes {
-      if attributes.representedElementCategory != .Cell {
+      if attributes.representedElementCategory != .cell {
         continue
       }
       
@@ -93,27 +93,27 @@ extension PageCollectionLayout {
       newOffsetX += velocity.x > 0 ? pageWidth : -pageWidth
     }
     
-    return CGPointMake(newOffsetX, proposedContentOffset.y)
+    return CGPoint(x: newOffsetX, y: proposedContentOffset.y)
   }
   
-  override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+  override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
     return true
   }
   
-  override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+  override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
     guard let collectionView = self.collectionView,
-      let superAttributes = super.layoutAttributesForElementsInRect(rect) else {
-        return super.layoutAttributesForElementsInRect(rect)
+      let superAttributes = super.layoutAttributesForElements(in: rect) else {
+        return super.layoutAttributesForElements(in: rect)
     }
     if scaleItems == false{
-      return super.layoutAttributesForElementsInRect(rect)
+      return super.layoutAttributesForElements(in: rect)
     }
     
     let contentOffset = collectionView.contentOffset
     let size = collectionView.bounds.size
     
-    let visibleRect = CGRectMake(contentOffset.x, contentOffset.y, size.width, size.height)
-    let visibleCenterX = CGRectGetMidX(visibleRect)
+    let visibleRect = CGRect(x: contentOffset.x, y: contentOffset.y, width: size.width, height: size.height)
+    let visibleCenterX = visibleRect.midX
     
     guard case let newAttributesArray as [UICollectionViewLayoutAttributes] = NSArray(array: superAttributes, copyItems: true) else {
       return nil
@@ -137,13 +137,13 @@ extension PageCollectionLayout {
 
 extension PageCollectionLayout {
   
-  private func configureInset() -> Void {
+  fileprivate func configureInset() -> Void {
     guard let collectionView = self.collectionView else {
       return
     }
     
     let inset = collectionView.bounds.size.width / 2 - itemSize.width / 2
     collectionView.contentInset  = UIEdgeInsetsMake(0, inset, 0, inset)
-    collectionView.contentOffset = CGPointMake(-inset, 0)
+    collectionView.contentOffset = CGPoint(x: -inset, y: 0)
   }
 }

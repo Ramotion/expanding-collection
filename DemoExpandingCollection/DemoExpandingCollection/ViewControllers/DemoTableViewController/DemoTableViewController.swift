@@ -10,7 +10,7 @@ import UIKit
 
 class DemoTableViewController: ExpandingTableViewController {
   
-  private var scrollOffsetY: CGFloat = 0
+  fileprivate var scrollOffsetY: CGFloat = 0
   override func viewDidLoad() {
     super.viewDidLoad()
     configureNavBar()
@@ -22,9 +22,9 @@ class DemoTableViewController: ExpandingTableViewController {
 
 extension DemoTableViewController {
   
-  private func configureNavBar() {
-    navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-    navigationItem.rightBarButtonItem?.image = navigationItem.rightBarButtonItem?.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+  fileprivate func configureNavBar() {
+    navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+    navigationItem.rightBarButtonItem?.image = navigationItem.rightBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
   }
 }
 
@@ -32,7 +32,7 @@ extension DemoTableViewController {
 
 extension DemoTableViewController {
   
-  @IBAction func backButtonHandler(sender: AnyObject) {
+  @IBAction func backButtonHandler(_ sender: AnyObject) {
     // buttonAnimation
     let viewControllers: [DemoViewController?] = navigationController?.viewControllers.map { $0 as? DemoViewController } ?? []
 
@@ -49,7 +49,7 @@ extension DemoTableViewController {
 
 extension DemoTableViewController {
   
-  override func scrollViewDidScroll(scrollView: UIScrollView) {
+  override func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //    if scrollView.contentOffset.y < -25 {
 //      // buttonAnimation
 //      let viewControllers: [DemoViewController?] = navigationController?.viewControllers.map { $0 as? DemoViewController } ?? []

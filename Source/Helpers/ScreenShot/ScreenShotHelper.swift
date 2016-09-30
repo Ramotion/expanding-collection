@@ -9,17 +9,17 @@
 import UIKit
 
 extension UIView {
-  func takeSnapshot(frame: CGRect) -> UIImage? {
+  func takeSnapshot(_ frame: CGRect) -> UIImage? {
     UIGraphicsBeginImageContextWithOptions(frame.size, false, 0.0)
     
     let context = UIGraphicsGetCurrentContext();
-    CGContextTranslateCTM(context, frame.origin.x * -1, frame.origin.y * -1)
+    context?.translateBy(x: frame.origin.x * -1, y: frame.origin.y * -1)
     
     guard let currentContext = UIGraphicsGetCurrentContext() else {
       return nil
     }
     
-    self.layer.renderInContext(currentContext)
+    self.layer.render(in: currentContext)
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
