@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'expanding-collection'
-  s.version      = '0.3.2'
+  s.version      = '1.0.0'
   s.summary      = 'Transition animtion from CollectionView to TableView'
   s.license      = 'MIT'
   s.homepage     = 'https://github.com/Ramotion/expanding-collection'
@@ -8,5 +8,4 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source       = { :git => 'https://github.com/Ramotion/expanding-collection.git', :tag => s.version.to_s }
   s.source_files  = 'Source/**/*.swift'
-  s.requires_arc = true
 end
