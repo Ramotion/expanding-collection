@@ -109,18 +109,18 @@ extension ExpandingViewController {
 
 extension ExpandingViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
-  public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+  open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     guard case let cell as BasePageCollectionCell = cell else {
       return
     }
     
     cell.configureCellViewConstraintsWithSize(itemSize)
   }
-  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     fatalError("need emplementation in subclass")
   }
   
-  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     fatalError("need emplementation in subclass")
   }
 }
