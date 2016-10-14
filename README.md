@@ -14,7 +14,7 @@
 
 ## About
 This project is maintained by Ramotion, Inc.
-We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br><br> [Looking for developers for your project? [CONTACT OUR TEAM](https://business.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection-contact-us)]
+We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br><br> [**Looking for developers for your project?** [CONTACT OUR TEAM](https://business.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection-contact-us)]
 
 
 [![Animation](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/preview.gif)](https://dribbble.com/shots/2741477-iOS-Expanding-Collection-Open-Source)
