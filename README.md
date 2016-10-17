@@ -8,12 +8,13 @@
 [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/expanding-collection.svg)](https://cdn.rawgit.com/Ramotion/expanding-collection/master/docs/index.html)
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Ramotion/expanding-collection)
-[![Travis](https://travis-ci.org/Ramotion/elastic-pull-to-update.svg?branch=master)](https://travis-ci.org/Ramotion/elastic-pull-to-update)
+[![Travis](https://travis-ci.org/Ramotion/expanding-collection.svg?branch=master)](https://travis-ci.org/Ramotion/expanding-collection)
 [![codebeat badge](https://codebeat.co/badges/6a009992-5bf2-4730-aa35-f3b20ce7693d)](https://codebeat.co/projects/github-com-ramotion-expanding-collection)
-[![Analytics](https://ga-beacon.appspot.com/UA-84973210-1/ramotion/expanding-collection)](https://github.com/igrigorik/ga-beacon)
 
 ## About
-This project is maintained by Ramotion, an agency specialized in building dedicated engineering teams and developing custom software.<br><br> [Contact our team](https://business.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection-contact-us) and we’ll help you work with the best engineers from Eastern Europe.
+This project is maintained by Ramotion, Inc.<br>
+We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br><br>**Looking for developers for your project?** [[▶︎CONTACT OUR TEAM◀︎](http://business.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection-contact-us/#Get_in_Touch)]
+
 
 [![Animation](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/preview.gif)](https://dribbble.com/shots/2741477-iOS-Expanding-Collection-Open-Source)
 
@@ -42,7 +43,7 @@ github "Ramotion/expanding-collection"
 ## Usage
 
 ```swift
-import ExpandingCollection
+import expanding_collection
 ```
 
 #### Create CollectionViewCell
