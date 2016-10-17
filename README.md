@@ -43,7 +43,7 @@ github "Ramotion/expanding-collection"
 ## Usage
 
 ```swift
-import ExpandingCollection
+import expanding_collection
 ```
 
 #### Create CollectionViewCell
