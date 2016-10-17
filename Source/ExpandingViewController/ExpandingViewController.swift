@@ -89,6 +89,9 @@ extension ExpandingViewController {
                                                      height: itemSize.height + itemSize.height / 5 * 2,
                                                      dataSource: self,
                                                      delegate: self)
+    if #available(iOS 10.0, *) {
+      collectionView?.isPrefetchingEnabled = false
+    } 
     transitionDriver = TransitionDriver(view: view)
   }
 }

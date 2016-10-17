@@ -85,7 +85,6 @@ extension BasePageCollectionCell {
     configurationViews()
     shadowView = createShadowViewOnView(frontContainerView)
   }
-
 }
 
 // MARK: Control 

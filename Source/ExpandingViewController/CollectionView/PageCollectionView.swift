@@ -13,12 +13,11 @@ class PageCollectionView: UICollectionView {
 }
 
 // MARK: init
-
 extension PageCollectionView {
   
   class func createOnView(_ view: UIView,
                           layout: UICollectionViewLayout,
-                          height:CGFloat,
+                          height: CGFloat,
                           dataSource: UICollectionViewDataSource,
                           delegate: UICollectionViewDelegate) -> PageCollectionView {
     
