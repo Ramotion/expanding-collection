@@ -111,8 +111,8 @@ extension BasePageCollectionCell {
       heightConstant.constant = isOpen == true ? frontContainerView.bounds.size.height + yOffset : frontContainerView.bounds.size.height
     }
     
+    isOpened = isOpen
     configurationCell()
-
     
     if animated == true {
       UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: {
@@ -122,7 +122,6 @@ extension BasePageCollectionCell {
       self.contentView.layoutIfNeeded()
     }
    
-    isOpened = isOpen
   }
 }
 
