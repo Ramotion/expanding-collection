@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Expanding-collection by Ramotion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Expanding-collection</h1>
+      <h2 class="project-tagline">ExpandingCollection is a card peek/pop controller</h2>
+      <a href="https://github.com/Ramotion/expanding-collection" class="btn">View on GitHub</a>
+      <a href="https://github.com/Ramotion/expanding-collection/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Ramotion/expanding-collection/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><a href="https://business.ramotion.com?utm_source=gthb&amp;utm_medium=special&amp;utm_campaign=expanding-collection-logo"><img src="https://raw.githubusercontent.com/Ramotion/expanding-collection/master/header.png" alt="header"></a></p>
+
+<h1>
+<a id="expanding-collection" class="anchor" href="#expanding-collection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>expanding-collection</h1>
+
+<p><a href="http://twitter.com/Ramotion"><img src="https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat" alt="Twitter"></a>
+<a href="https://cocoapods.org/pods/expanding-collection"><img src="https://img.shields.io/cocoapods/p/expanding-collection.svg" alt="CocoaPods"></a>
+<a href="http://cocoapods.org/pods/expanding-collection"><img src="https://img.shields.io/cocoapods/v/expanding-collection.svg" alt="CocoaPods"></a>
+<a href="https://cdn.rawgit.com/Ramotion/expanding-collection/master/docs/index.html"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/expanding-collection.svg" alt="CocoaPods"></a></p>
+
+<p><a href="https://github.com/Ramotion/expanding-collection"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
+<a href="https://travis-ci.org/Ramotion/expanding-collection"><img src="https://travis-ci.org/Ramotion/expanding-collection.svg?branch=master" alt="Travis"></a>
+<a href="https://codebeat.co/projects/github-com-ramotion-expanding-collection"><img src="https://codebeat.co/badges/6a009992-5bf2-4730-aa35-f3b20ce7693d" alt="codebeat badge"></a></p>
+
+<h2>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h2>
+
+<p>This project is maintained by Ramotion, Inc.<br>
+We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br><br><strong>Looking for developers for your project?</strong> [<a href="http://business.ramotion.com?utm_source=gthb&amp;utm_medium=special&amp;utm_campaign=expanding-collection-contact-us/#Get_in_Touch">▶︎CONTACT OUR TEAM◀︎</a>]</p>
+
+<p><a href="https://dribbble.com/shots/2741477-iOS-Expanding-Collection-Open-Source"><img src="https://raw.githubusercontent.com/Ramotion/expanding-collection/master/preview.gif" alt="Animation"></a></p>
+
+<p>The <a href="https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&amp;utm_medium=special&amp;utm_campaign=expanding-collection">iPhone mockup</a> available <a href="https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&amp;utm_medium=special&amp;utm_campaign=expanding-collection">here</a>.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>iOS 9.0+</li>
+<li>Xcode 8</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Just add the Source folder to your project.</p>
+
+<p>or use <a href="https://cocoapods.org">CocoaPods</a> with Podfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>expanding-collection<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>~&gt; 1.0.3<span class="pl-pds">'</span></span> swift <span class="pl-c1">3</span>
+
+pod <span class="pl-s"><span class="pl-pds">'</span>expanding-collection<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>~&gt; 0.3.2<span class="pl-pds">'</span></span> swift <span class="pl-c1">2</span></pre></div>
+
+<p>or <a href="https://github.com/Carthage/Carthage">Carthage</a> users can simply add to their <code>Cartfile</code>:</p>
+
+<pre><code>github "Ramotion/expanding-collection"
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">import</span> <span class="pl-c1">expanding_collection</span></pre></div>
+
+<h4>
+<a id="create-collectionviewcell" class="anchor" href="#create-collectionviewcell" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create CollectionViewCell</h4>
+
+<p><img src="https://raw.githubusercontent.com/Ramotion/expanding-collection/master/images/image2.png" alt="cell"></p>
+
+<p>1) Create UICollectionViewCell inherit from <code>BasePageCollectionCell</code> (recommend create cell with xib file)</p>
+
+<p>2) Adding FrontView</p>
+
+<ul>
+<li>add a view to YOURCELL.xib and connect it to <code>@IBOutlet weak var frontContainerView: UIView!</code><br>
+</li>
+<li>
+<p>add width, height, centerX and centerY constraints (width and height constranints must equal cellSize)</p>
+
+<p><img src="https://raw.githubusercontent.com/Ramotion/expanding-collection/master/images/image1.png" alt="cell">  </p>
+</li>
+<li>connect centerY constraint to <code>@IBOutlet weak var frontConstraintY: NSLayoutConstraint!</code>
+</li>
+<li>add any desired uiviews to frontView</li>
+</ul>
+
+<p>3) Adding BackView</p>
+
+<ul>
+<li>repeat step 2 (connect outlets to <code>@IBOutlet weak var backContainerView: UIView!</code>, <code>@IBOutlet weak var backConstraintY: NSLayoutConstraint!</code>)</li>
+</ul>
+
+<p>4) Cell example <a href="https://github.com/Ramotion/expanding-collection/tree/master/DemoExpandingCollection/DemoExpandingCollection/ViewControllers/DemoViewController/Cells">DemoCell</a></p>
+
+<h6>
+<a id="if-set-tag--101-for-any-frontviewsubviews-this-view-will-be-hidden-during-the-transition-animation" class="anchor" href="#if-set-tag--101-for-any-frontviewsubviews-this-view-will-be-hidden-during-the-transition-animation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>If set <code>tag = 101</code> for any <code>FrontView.subviews</code> this view will be hidden during the transition animation</h6>
+
+<h4>
+<a id="create-collectionviewcontroller" class="anchor" href="#create-collectionviewcontroller" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create CollectionViewController</h4>
+
+<p>1) Create a UIViewController inheriting from <code>ExpandingViewController</code></p>
+
+<p>2) Register Cell and set Cell size:</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">override</span> <span class="pl-k">func</span> <span class="pl-en">viewDidLoad</span>() {
+    itemSize <span class="pl-k">=</span> CGSize(width: <span class="pl-c1">214</span>, height: <span class="pl-c1">264</span>)
+    <span class="pl-k">super</span><span class="pl-k">.</span>viewDidLoad()
+
+    <span class="pl-c">// register cell</span>
+    <span class="pl-k">let</span> nib <span class="pl-k">=</span> UINib(nibName: <span class="pl-s"><span class="pl-pds">"</span>NibName<span class="pl-pds">"</span></span>, bundle: <span class="pl-c1">nil</span>)
+    collectionView?<span class="pl-k">.</span>registerNib(nib, forCellWithReuseIdentifier: <span class="pl-s"><span class="pl-pds">"</span>CellIdentifier<span class="pl-pds">"</span></span>)
+}</pre></div>
+
+<p>3) Add UICollectionViewDataSource methods</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">extension</span> YourViewController {
+
+  <span class="pl-k">override</span> <span class="pl-k">func</span> <span class="pl-en">collectionView</span>(collectionView: UICollectionView, <span class="pl-en">numberOfItemsInSection</span> <span class="pl-smi">section</span>: <span class="pl-c1">Int</span>) <span class="pl-k">-&gt;</span> <span class="pl-c1">Int</span> {
+    <span class="pl-k">return</span> items<span class="pl-k">.</span><span class="pl-c1">count</span>
+  }
+
+  <span class="pl-k">override</span> <span class="pl-k">func</span> <span class="pl-en">collectionView</span>(collectionView: UICollectionView, <span class="pl-en">cellForItemAtIndexPath</span> <span class="pl-smi">indexPath</span>: NSIndexPath) <span class="pl-k">-&gt;</span> UICollectionViewCell {
+    <span class="pl-k">let</span> cell <span class="pl-k">=</span> collectionView<span class="pl-k">.</span>dequeueReusableCellWithReuseIdentifier(<span class="pl-s"><span class="pl-pds">"</span>CellIdentifier<span class="pl-pds">"</span></span>), forIndexPath: indexPath)
+    <span class="pl-c">// configure cell</span>
+    <span class="pl-k">return</span> cell
+  }
+}</pre></div>
+
+<p>4) Open Cell animation</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">override</span> <span class="pl-k">func</span> <span class="pl-en">viewDidLoad</span>() {
+    itemSize <span class="pl-k">=</span> CGSize(width: <span class="pl-c1">214</span>, height: <span class="pl-c1">264</span>)
+    <span class="pl-k">super</span><span class="pl-k">.</span>viewDidLoad()
+
+    <span class="pl-c">// register cell</span>
+    <span class="pl-k">let</span> nib <span class="pl-k">=</span> UINib(nibName: <span class="pl-s"><span class="pl-pds">"</span>CellIdentifier<span class="pl-pds">"</span></span>, bundle: <span class="pl-c1">nil</span>)
+    collectionView?<span class="pl-k">.</span>registerNib(nib, forCellWithReuseIdentifier: <span class="pl-c1">String</span>(DemoCollectionViewCell))
+}</pre></div>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">collectionView</span>(collectionView: UICollectionView, <span class="pl-en">didSelectItemAtIndexPath</span> <span class="pl-smi">indexPath</span>: NSIndexPath) {
+    cell<span class="pl-k">.</span>cellIsOpen(<span class="pl-k">!</span>cell<span class="pl-k">.</span>isOpened)
+}</pre></div>
+
+<h6>
+<a id="if-you-use-this-delegates-method" class="anchor" href="#if-you-use-this-delegates-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>if you use this delegates method:</h6>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">collectionView</span>(collectionView: UICollectionView, <span class="pl-en">willDisplayCell</span> <span class="pl-smi">cell</span>: UICollectionViewCell, <span class="pl-en">forItemAtIndexPath</span> <span class="pl-smi">indexPath</span>: NSIndexPath)
+
+<span class="pl-k">func</span> <span class="pl-en">scrollViewDidEndDecelerating</span>(scrollView: UIScrollView)</pre></div>
+
+<h6>
+<a id="must-call-super-method" class="anchor" href="#must-call-super-method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>must call super method:</h6>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">func</span> <span class="pl-en">collectionView</span>(collectionView: UICollectionView, <span class="pl-en">willDisplayCell</span> <span class="pl-smi">cell</span>: UICollectionViewCell, <span class="pl-en">forItemAtIndexPath</span> <span class="pl-smi">indexPath</span>: NSIndexPath) {
+  <span class="pl-k">super</span><span class="pl-k">.</span>collectionView(collectionView: collectionView, willDisplayCell cell: cell, forItemAtIndexPath indexPath: indexPath)
+  <span class="pl-c">// code</span>
+}
+
+<span class="pl-k">func</span> <span class="pl-en">scrollViewDidEndDecelerating</span>(scrollView: UIScrollView) {
+  <span class="pl-k">super</span><span class="pl-k">.</span>scrollViewDidEndDecelerating(scrollView: scrollView)
+  <span class="pl-c">// code</span>
+}</pre></div>
+
+<h4>
+<a id="transition-animation" class="anchor" href="#transition-animation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transition animation</h4>
+
+<p>1) Create a UITableViewController inheriting from <code>ExpandingTableViewController</code></p>
+
+<p>2) Set header height default 236</p>
+
+<div class="highlight highlight-source-swift"><pre><span class="pl-k">override</span> <span class="pl-k">func</span> <span class="pl-en">viewDidLoad</span>() {
+    <span class="pl-k">super</span><span class="pl-k">.</span>viewDidLoad()
+    headerHeight <span class="pl-k">=</span> <span class="pl-k">***</span>
+}  </pre></div>
+
+<p>3) Call the push method in YourViewController to YourTableViewController</p>
+
+<div class="highlight highlight-source-swift"><pre>  <span class="pl-k">if</span> cell<span class="pl-k">.</span>isOpened <span class="pl-k">==</span> <span class="pl-c1">true</span> {
+    <span class="pl-k">let</span> vc: YourTableViewController <span class="pl-k">=</span> <span class="pl-c">// ... create view controller  </span>
+    pushToViewController(vc)
+  }</pre></div>
+
+<p>4) For back transition use <code>popTransitionAnimation()</code></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Expanding collection is released under the MIT license.
+See <a href="./LICENSE">LICENSE</a> for details.</p>
+
+<h2>
+<a id="follow-us" class="anchor" href="#follow-us" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Follow us</h2>
+
+<p><a href="https://twitter.com/intent/tweet?text=https://github.com/ramotion/expanding-collection"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Twitter URL"></a>
+<a href="https://twitter.com/ramotion"><img src="https://img.shields.io/twitter/follow/ramotion.svg?style=social" alt="Twitter Follow"></a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Ramotion/expanding-collection">Expanding-collection</a> is maintained by <a href="https://github.com/Ramotion">Ramotion</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
