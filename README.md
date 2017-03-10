@@ -20,7 +20,7 @@ We specialize in the designing and coding of custom UI for Mobile Apps and Websi
 
 [![Animation](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/preview.gif)](https://dribbble.com/shots/2741477-iOS-Expanding-Collection-Open-Source)
 
-The [iPhone mockup](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection) available [here](https://store.ramotion.com/product/iphone-6-mockups?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection).
+The [iPhone mockup](https://store.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection) available [here](https://store.ramotion.com?utm_source=gthb&utm_medium=special&utm_campaign=expanding-collection).
 
 ## Try this UI control in action
 
