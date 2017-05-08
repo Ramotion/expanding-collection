@@ -17,10 +17,10 @@ extension Rotatable {
 
   func rotateAnimationFrom(_ fromItem: UIView, toItem: UIView, duration: Double) {
     
-    let fromRotate  = animationFrom(0, to: M_PI, key: "transform.rotation", duration: duration)
+    let fromRotate  = animationFrom(0, to: Double.pi, key: "transform.rotation", duration: duration)
     let fromOpacity = animationFrom(1, to: 0, key: "opacity", duration: duration)
 
-    let toRotate    = animationFrom(-M_PI, to: 0, key: "transform.rotation", duration: duration)
+    let toRotate    = animationFrom(-Double.pi, to: 0, key: "transform.rotation", duration: duration)
     let toOpacity   = animationFrom(0, to: 1, key: "opacity", duration: duration)
     
     fromItem.layer.add(fromRotate, forKey: nil)
