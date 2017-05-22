@@ -11,8 +11,16 @@ import UIKit
 /// Base class for UICollectionViewCell
 open class BasePageCollectionCell: UICollectionViewCell {
   
-  /// Animation oposition offset when cell is open
+  /// DEPRECATED! Animation oposition offset when cell is open
   @IBInspectable open var yOffset: CGFloat = 40
+  /// Spacing between centers of views
+  @IBInspectable open var ySpacing: CGFloat = CGFloat.greatestFiniteMagnitude
+  /// Additional height of back view, when it grows
+  @IBInspectable open var additionalHeight: CGFloat = CGFloat.greatestFiniteMagnitude
+  /// Additional width of back view, when it grows
+  @IBInspectable open var additionalWidth: CGFloat = CGFloat.greatestFiniteMagnitude
+  /// Should front view drow shadow to bottom or not
+  @IBInspectable open var dropShadow: Bool = true
   
   // MARK: Constants
   
@@ -100,15 +108,28 @@ extension BasePageCollectionCell {
   public func cellIsOpen(_ isOpen: Bool, animated: Bool = true) {
     if isOpen == isOpened { return }
     
-    frontConstraintY.constant = isOpen == true ? -frontContainerView.bounds.size.height / 5 : 0
-    backConstraintY.constant  = isOpen == true ? frontContainerView.bounds.size.height / 5 - yOffset / 2 : 0
+    if ySpacing == .greatestFiniteMagnitude {
+      frontConstraintY.constant = isOpen == true ? -frontContainerView.bounds.size.height / 5 : 0
+      backConstraintY.constant  = isOpen == true ? frontContainerView.bounds.size.height / 5 - yOffset / 2 : 0
+    } else {
+      frontConstraintY.constant = isOpen == true ? -ySpacing / 2 : 0
+      backConstraintY.constant  = isOpen == true ? ySpacing / 2 : 0
+    }
     
     if let widthConstant = backContainerView.getConstraint(.width) {
-      widthConstant.constant = isOpen == true ? frontContainerView.bounds.size.width + yOffset : frontContainerView.bounds.size.width
+      if additionalWidth == .greatestFiniteMagnitude {
+        widthConstant.constant = isOpen == true ? frontContainerView.bounds.size.width + yOffset : frontContainerView.bounds.size.width
+      } else {
+        widthConstant.constant = isOpen == true ? frontContainerView.bounds.size.width + additionalWidth : frontContainerView.bounds.size.width
+      }
     }
     
     if let heightConstant = backContainerView.getConstraint(.height) {
-      heightConstant.constant = isOpen == true ? frontContainerView.bounds.size.height + yOffset : frontContainerView.bounds.size.height
+      if additionalHeight == .greatestFiniteMagnitude {
+        heightConstant.constant = isOpen == true ? frontContainerView.bounds.size.height + yOffset : frontContainerView.bounds.size.height
+      } else {
+        heightConstant.constant = isOpen == true ? frontContainerView.bounds.size.height + additionalHeight : frontContainerView.bounds.size.height
+      }
     }
     
     isOpened = isOpen
@@ -147,10 +168,12 @@ extension BasePageCollectionCell {
       $0.backgroundColor                           = UIColor(white: 0, alpha: 0)
       $0.translatesAutoresizingMaskIntoConstraints = false
       $0.layer.masksToBounds                       = false;
-      $0.layer.shadowColor                         = UIColor.black.cgColor
-      $0.layer.shadowRadius                        = 10
-      $0.layer.shadowOpacity                       = 0.3
-      $0.layer.shadowOffset                        = CGSize(width: 0, height:0)
+      if dropShadow {
+        $0.layer.shadowColor                         = UIColor.black.cgColor
+        $0.layer.shadowRadius                        = 10
+        $0.layer.shadowOpacity                       = 0.3
+        $0.layer.shadowOffset                        = CGSize(width: 0, height:0)
+      }
     }
     contentView.insertSubview(shadow, belowSubview: view)
     
@@ -190,8 +213,13 @@ extension BasePageCollectionCell {
 		
 		frame.size.height += i * superHeight
 		frame.origin.y -= i * superHeight / 2
-		frame.origin.x -= i * yOffset / 2
-		frame.size.width += i * yOffset
+        if additionalWidth == .greatestFiniteMagnitude {
+            frame.origin.x -= i * yOffset / 2
+            frame.size.width += i * yOffset
+        } else {
+            frame.origin.x -= i * additionalWidth / 2
+            frame.size.width += i * additionalWidth
+        }
 	}
 	
   
