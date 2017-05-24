@@ -15,10 +15,12 @@ class DemoViewController: ExpandingViewController {
   fileprivate let items: [ItemInfo] = [("item0", "Boston"),("item1", "New York"),("item2", "San Francisco"),("item3", "Washington")]
   
   @IBOutlet weak var pageLabel: UILabel!
+  @IBOutlet weak var titleImageView: UIImageView!
+  @IBOutlet weak var titleImageViewXConstraint: NSLayoutConstraint!
+  
 }
 
-// MARK: life cicle
-
+// MARK: - Lifecycle 🌎
 extension DemoViewController {
   
   override func viewDidLoad() {
@@ -26,14 +28,22 @@ extension DemoViewController {
     super.viewDidLoad()
     
     registerCell()
-    fillCellIsOpeenArry()
-    addGestureToView(collectionView!)
+    fillCellIsOpenArray()
+    addGesture(to: collectionView!)
     configureNavBar()
   }
+  
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    guard let titleView = navigationItem.titleView else { return }
+    let center = UIScreen.main.bounds.midX
+    let diff = center - titleView.frame.midX
+    titleImageViewXConstraint.constant = diff
+  }
+  
 }
 
-// MARK: Helpers 
-
+// MARK: Helpers
 extension DemoViewController {
   
   fileprivate func registerCell() {
@@ -42,10 +52,8 @@ extension DemoViewController {
     collectionView?.register(nib, forCellWithReuseIdentifier: String(describing: DemoCollectionViewCell.self))
   }
   
-  fileprivate func fillCellIsOpeenArry() {
-    for _ in items {
-      cellsIsOpen.append(false)
-    }
+  fileprivate func fillCellIsOpenArray() {
+    cellsIsOpen = Array(repeating: false, count: items.count)
   }
   
   fileprivate func getViewController() -> ExpandingTableViewController {
@@ -57,22 +65,22 @@ extension DemoViewController {
   fileprivate func configureNavBar() {
     navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
   }
+  
 }
 
 /// MARK: Gesture
-
 extension DemoViewController {
   
-  fileprivate func addGestureToView(_ toView: UIView) {
-    let gesutereUp = Init(UISwipeGestureRecognizer(target: self, action: #selector(DemoViewController.swipeHandler(_:)))) {
+  fileprivate func addGesture(to view: UIView) {
+    let upGesture = Init(UISwipeGestureRecognizer(target: self, action: #selector(DemoViewController.swipeHandler(_:)))) {
       $0.direction = .up
     }
     
-    let gesutereDown = Init(UISwipeGestureRecognizer(target: self, action: #selector(DemoViewController.swipeHandler(_:)))) {
+    let downGesture = Init(UISwipeGestureRecognizer(target: self, action: #selector(DemoViewController.swipeHandler(_:)))) {
       $0.direction = .down
     }
-    toView.addGestureRecognizer(gesutereUp)
-    toView.addGestureRecognizer(gesutereDown)
+    view.addGestureRecognizer(upGesture)
+    view.addGestureRecognizer(downGesture)
   }
 
   func swipeHandler(_ sender: UISwipeGestureRecognizer) {
@@ -89,28 +97,28 @@ extension DemoViewController {
     
     let open = sender.direction == .up ? true : false
     cell.cellIsOpen(open)
-    cellsIsOpen[(indexPath as NSIndexPath).row] = cell.isOpened
+    cellsIsOpen[indexPath.row] = cell.isOpened
   }
+  
 }
 
-// MARK: UIScrollViewDelegate 
-
+// MARK: UIScrollViewDelegate
 extension DemoViewController {
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     pageLabel.text = "\(currentIndex+1)/\(items.count)"
   }
+  
 }
 
 // MARK: UICollectionViewDataSource
-
 extension DemoViewController {
   
   override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     super.collectionView(collectionView, willDisplay: cell, forItemAt: indexPath)
     guard let cell = cell as? DemoCollectionViewCell else { return }
 
-    let index = (indexPath as NSIndexPath).row % items.count
+    let index = indexPath.row % items.count
     let info = items[index]
     cell.backgroundImageView?.image = UIImage(named: info.imageName)
     cell.customTitle.text = info.title
@@ -119,7 +127,7 @@ extension DemoViewController {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
     guard let cell = collectionView.cellForItem(at: indexPath) as? DemoCollectionViewCell
-          , currentIndex == (indexPath as NSIndexPath).row else { return }
+          , currentIndex == indexPath.row else { return }
 
     if cell.isOpened == false {
       cell.cellIsOpen(true)
@@ -131,6 +139,7 @@ extension DemoViewController {
       }
     }
   }
+  
 }
 
 // MARK: UICollectionViewDataSource
@@ -143,4 +152,5 @@ extension DemoViewController {
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: DemoCollectionViewCell.self), for: indexPath)
   }
+  
 }

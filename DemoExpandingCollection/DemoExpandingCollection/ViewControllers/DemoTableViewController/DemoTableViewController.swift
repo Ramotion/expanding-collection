@@ -17,19 +17,36 @@ class DemoTableViewController: ExpandingTableViewController {
     let image1 = Asset.backgroundImage.image
     tableView.backgroundView = UIImageView(image: image1)
   }
+  
+  @IBOutlet weak var titleImageView: UIImageView!
+  @IBOutlet weak var titleImageViewXConstraint: NSLayoutConstraint!
+  
 }
-// MARK: Helpers
 
+// MARK: - Lifecycle
+extension DemoTableViewController {
+  
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    guard let titleView = navigationItem.titleView else { return }
+    let center = UIScreen.main.bounds.midX
+    let diff = center - titleView.frame.midX
+    titleImageViewXConstraint.constant = diff
+  }
+  
+}
+
+// MARK: Helpers
 extension DemoTableViewController {
   
   fileprivate func configureNavBar() {
     navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
     navigationItem.rightBarButtonItem?.image = navigationItem.rightBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
   }
+  
 }
 
 // MARK: Actions
-
 extension DemoTableViewController {
   
   @IBAction func backButtonHandler(_ sender: AnyObject) {
@@ -46,7 +63,6 @@ extension DemoTableViewController {
 }
 
 // MARK: UIScrollViewDelegate
-
 extension DemoTableViewController {
   
   override func scrollViewDidScroll(_ scrollView: UIScrollView) {
