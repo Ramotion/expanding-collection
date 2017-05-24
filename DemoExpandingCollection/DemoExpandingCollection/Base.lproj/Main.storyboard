@@ -74,6 +74,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="pageLabel" destination="Irl-Rb-fcB" id="oUZ-x9-PkD"/>
+                        <outlet property="titleImageView" destination="92b-RV-q6w" id="3lS-Ot-c9A"/>
+                        <outlet property="titleImageViewXConstraint" destination="kLZ-Jr-wTP" id="cFl-I4-nzg"/>
                         <segue destination="7RW-i0-HfN" kind="show" identifier="NoName" id="enc-PY-spo"/>
                     </connections>
                 </viewController>
@@ -528,6 +530,7 @@
                             <outlet property="delegate" destination="7RW-i0-HfN" id="28D-Ct-5A9"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="9zG-W9-jGP">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="searchIcon" id="sSw-AG-wrF"/>
@@ -555,6 +558,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleImageView" destination="a24-t2-9jd" id="dZR-2A-N8b"/>
+                        <outlet property="titleImageViewXConstraint" destination="sdW-OO-2BS" id="huK-Bc-7RX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koT-TQ-RUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
