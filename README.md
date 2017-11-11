@@ -11,6 +11,10 @@
 [![Travis](https://travis-ci.org/Ramotion/expanding-collection.svg?branch=master)](https://travis-ci.org/Ramotion/expanding-collection)
 [![codebeat badge](https://codebeat.co/badges/6a009992-5bf2-4730-aa35-f3b20ce7693d)](https://codebeat.co/projects/github-com-ramotion-expanding-collection)
 
+# Check this library on other platforms:
+<a href="https://github.com/Ramotion/expanding-collection-android"> 
+<img src="https://github.com/ramotion/navigation-stack/raw/master/Android_Java@2x.png" width="178" height="81"></a>
+
 ## About
 This project is maintained by Ramotion, Inc.<br>
 We specialize in the designing and coding of custom UI for Mobile Apps and Websites.<br>
