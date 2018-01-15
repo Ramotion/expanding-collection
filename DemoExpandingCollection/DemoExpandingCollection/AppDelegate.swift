@@ -18,23 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     configureNavigationTabBar()
     return true
   }
-
-  func applicationWillResignActive(_ application: UIApplication) {
-    
-  }
-
-  func applicationDidEnterBackground(_ application: UIApplication) {
-   
-  }
-
-  func applicationWillEnterForeground(_ application: UIApplication) {
-  }
-
-  func applicationDidBecomeActive(_ application: UIApplication) {
-  }
-
-  func applicationWillTerminate(_ application: UIApplication) {
-  }
 }
 
 extension AppDelegate {
@@ -50,8 +33,8 @@ extension AppDelegate {
     shadow.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
     
     UINavigationBar.appearance().titleTextAttributes = [
-      NSForegroundColorAttributeName : UIColor.white,
-      NSShadowAttributeName: shadow
+      NSAttributedStringKey.foregroundColor : UIColor.white,
+      NSAttributedStringKey.shadow: shadow
     ]
   }
 }
