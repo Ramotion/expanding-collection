@@ -16,24 +16,10 @@ class DemoTableViewController: ExpandingTableViewController {
     configureNavBar()
     let image1 = Asset.backgroundImage.image
     tableView.backgroundView = UIImageView(image: image1)
+    if #available(iOS 11.0, *) {
+        tableView.contentInsetAdjustmentBehavior = .never
+    }
   }
-  
-  @IBOutlet weak var titleImageView: UIImageView!
-  @IBOutlet weak var titleImageViewXConstraint: NSLayoutConstraint!
-  
-}
-
-// MARK: - Lifecycle
-extension DemoTableViewController {
-  
-  override func viewWillLayoutSubviews() {
-    super.viewWillLayoutSubviews()
-    guard let titleView = navigationItem.titleView else { return }
-    let center = UIScreen.main.bounds.midX
-    let diff = center - titleView.frame.midX
-    titleImageViewXConstraint.constant = diff
-  }
-  
 }
 
 // MARK: Helpers

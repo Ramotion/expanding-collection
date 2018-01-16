@@ -15,9 +15,6 @@ class DemoViewController: ExpandingViewController {
   fileprivate let items: [ItemInfo] = [("item0", "Boston"),("item1", "New York"),("item2", "San Francisco"),("item3", "Washington")]
   
   @IBOutlet weak var pageLabel: UILabel!
-  @IBOutlet weak var titleImageView: UIImageView!
-  @IBOutlet weak var titleImageViewXConstraint: NSLayoutConstraint!
-  
 }
 
 // MARK: - Lifecycle 🌎
@@ -32,15 +29,6 @@ extension DemoViewController {
     addGesture(to: collectionView!)
     configureNavBar()
   }
-  
-  override func viewWillLayoutSubviews() {
-    super.viewWillLayoutSubviews()
-    guard let titleView = navigationItem.titleView else { return }
-    let center = UIScreen.main.bounds.midX
-    let diff = center - titleView.frame.midX
-    titleImageViewXConstraint.constant = diff
-  }
-  
 }
 
 // MARK: Helpers
