@@ -1,6 +1,13 @@
-osx_image: xcode8
+osx_image: xcode9.2
 language: objective-c
 
 xcode_project: DemoExpandingCollection/DemoExpandingCollection.xcodeproj
 xcode_scheme: ExpandingCollection
-xcode_sdk: iphonesimulator
+xcode_sdk: iphonesimulator11.2
+
+# SWIFT_VERSION: 4.0
+
+# whitelist
+branches:
+only:
+- master
