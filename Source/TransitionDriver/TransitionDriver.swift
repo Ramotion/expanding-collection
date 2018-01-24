@@ -226,7 +226,7 @@ extension TransitionDriver {
     }
     
     backViewFrame.origin.y        = cell.backConstraintY.constant
-    cell.backConstraintY.constant = view.bounds.size.height / 2 - (view.bounds.size.height - 236) / 2 + insets
+    cell.backConstraintY.constant = view.bounds.size.height / 2 - (view.bounds.size.height - height) / 2 + insets
   }
   
   fileprivate func closeBackViewConfigurationConstraints(_ cell: BasePageCollectionCell?) {
