@@ -12,8 +12,7 @@ import UIKit
 open class ExpandingTableViewController: UITableViewController {
 
     // MARK: Vars
-
-    /// The height of the table view header
+  /// The height of the table view header, set before transition
     open var headerHeight: CGFloat = 236
 
     var transitionDriver: TransitionDriver?
