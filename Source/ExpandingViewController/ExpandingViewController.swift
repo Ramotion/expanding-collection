@@ -127,15 +127,3 @@ extension ExpandingViewController: UICollectionViewDataSource, UICollectionViewD
         fatalError("need emplementation in subclass")
     }
 }
-
-// MARK: UIScrollViewDelegate
-
-extension ExpandingViewController {
-
-    public func scrollViewDidEndDecelerating(_: UIScrollView) {
-        let indexPath = IndexPath(row: currentIndex, section: 0)
-        if case let currentCell as BasePageCollectionCell = collectionView?.cellForItem(at: indexPath) {
-            currentCell.configurationCell()
-        }
-    }
-}
