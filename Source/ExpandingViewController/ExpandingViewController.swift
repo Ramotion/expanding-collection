@@ -11,8 +11,8 @@ import UIKit
 /// UIViewController with UICollectionView with custom transition method
 open class ExpandingViewController: UIViewController {
 
-    /// The default size to use for cells.
-    open var itemSize = CGSize(width: 256, height: 335)
+    /// The default size to use for cells. Height of open cell state
+    open var itemSize = CGSize(width: 256, height: 460)
 
     ///  The collection view object managed by this view controller.
     open var collectionView: UICollectionView?
@@ -86,7 +86,7 @@ extension ExpandingViewController {
         let layout = PageCollectionLayout(itemSize: itemSize)
         collectionView = PageCollectionView.createOnView(view,
                                                          layout: layout,
-                                                         height: itemSize.height + itemSize.height / 5 * 2,
+                                                         height: itemSize.height,
                                                          dataSource: self,
                                                          delegate: self)
         if #available(iOS 10.0, *) {

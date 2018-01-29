@@ -31,7 +31,7 @@ The [iPhone mockup](https://store.ramotion.com?utm_source=gthb&utm_medium=specia
 ## Requirements
 
 - iOS 9.0+
-- Xcode 8
+- Xcode 9.0+
 
 ## Installation
 
@@ -39,12 +39,9 @@ Just add the Source folder to your project.
 
 or use [CocoaPods](https://cocoapods.org) with Podfile:
 ``` ruby
-pod 'expanding-collection', '~> 1.1.2' swift 4
-
-pod 'expanding-collection', '~> 1.0.3' swift 3
-
-pod 'expanding-collection', '~> 0.3.2' swift 2
+pod 'expanding-collection'
 ```
+
 or [Carthage](https://github.com/Carthage/Carthage) users can simply add to their `Cartfile`:
 ```
 github "Ramotion/expanding-collection"
@@ -84,7 +81,7 @@ import expanding_collection
 
 ``` swift
 override func viewDidLoad() {
-    itemSize = CGSize(width: 214, height: 264)
+    itemSize = CGSize(width: 214, height: 460) //IMPORTANT!!! Height of open state cell
     super.viewDidLoad()
 
     // register cell

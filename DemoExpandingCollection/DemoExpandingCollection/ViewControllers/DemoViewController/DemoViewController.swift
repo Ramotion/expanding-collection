@@ -22,7 +22,7 @@ class DemoViewController: ExpandingViewController {
 extension DemoViewController {
 
     override func viewDidLoad() {
-        itemSize = CGSize(width: 256, height: 335)
+        itemSize = CGSize(width: 256, height: 460)
         super.viewDidLoad()
 
         registerCell()

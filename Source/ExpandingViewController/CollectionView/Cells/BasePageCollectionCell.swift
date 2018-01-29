@@ -109,8 +109,8 @@ extension BasePageCollectionCell {
         if isOpen == isOpened { return }
 
         if ySpacing == .greatestFiniteMagnitude {
-            frontConstraintY.constant = isOpen == true ? -frontContainerView.bounds.size.height / 5 : 0
-            backConstraintY.constant = isOpen == true ? frontContainerView.bounds.size.height / 5 - yOffset / 2 : 0
+            frontConstraintY.constant = isOpen == true ? -frontContainerView.bounds.size.height / 6 : 0
+            backConstraintY.constant = isOpen == true ? frontContainerView.bounds.size.height / 6 - yOffset / 2 : 0
         } else {
             frontConstraintY.constant = isOpen == true ? -ySpacing / 2 : 0
             backConstraintY.constant = isOpen == true ? ySpacing / 2 : 0
@@ -133,7 +133,6 @@ extension BasePageCollectionCell {
         }
 
         isOpened = isOpen
-        configurationCell()
 
         if animated == true {
             UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: {
@@ -202,22 +201,6 @@ extension BasePageCollectionCell {
         shadow.layer.shadowPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: width!, height: height!), cornerRadius: 0).cgPath
 
         return shadow
-    }
-
-    func configurationCell() {
-        // Prevents indefinite growing of the cell issue
-        let i: CGFloat = isOpened ? 1 : -1
-        let superHeight = superview?.frame.size.height ?? 0
-
-        frame.size.height += i * superHeight
-        frame.origin.y -= i * superHeight / 2
-        if additionalWidth == .greatestFiniteMagnitude {
-            frame.origin.x -= i * yOffset / 2
-            frame.size.width += i * yOffset
-        } else {
-            frame.origin.x -= i * additionalWidth / 2
-            frame.size.width += i * additionalWidth
-        }
     }
 
     func configureCellViewConstraintsWithSize(_ size: CGSize) {
