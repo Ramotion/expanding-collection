@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'expanding-collection'
-  s.version      = '1.1.5'
+  s.version      = '2.0.0'
   s.summary      = 'Transition animtion from CollectionView to TableView'
   s.license      = 'MIT'
   s.homepage     = 'https://github.com/Ramotion/expanding-collection'
