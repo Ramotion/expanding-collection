@@ -1,5 +1,6 @@
 ![header](./header.png)
-![animation](./preview.gif)
+<img src="https://github.com/Ramotion/expanding-collection/blob/master/expanding-collection.gif" width="600" height="450" />
+<br><br/>
 
 
 # expanding-collection
