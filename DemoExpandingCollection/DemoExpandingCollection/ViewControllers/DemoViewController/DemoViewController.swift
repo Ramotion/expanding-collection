@@ -114,7 +114,7 @@ extension DemoViewController {
         cell.cellIsOpen(cellsIsOpen[index], animated: false)
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? DemoCollectionViewCell
             , currentIndex == indexPath.row else { return }
 
