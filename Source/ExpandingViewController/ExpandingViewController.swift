@@ -118,6 +118,9 @@ extension ExpandingViewController: UICollectionViewDataSource, UICollectionViewD
 
         cell.configureCellViewConstraintsWithSize(itemSize)
     }
+    
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
 
     open func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         fatalError("need emplementation in subclass")
