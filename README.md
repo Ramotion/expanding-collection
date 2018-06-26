@@ -178,6 +178,8 @@ required init?(coder aDecoder: NSCoder) {
 4) For back transition use `popTransitionAnimation()`
 
 
+This library is a part of a <a href="https://github.com/Ramotion/swift-ui-animation-components-and-libraries"><b>selection of our best UI open-source projects.</b></a>
+
 ## License
 
 Expanding collection is released under the MIT license.
