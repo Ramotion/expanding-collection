@@ -176,9 +176,8 @@ extension BasePageCollectionCell {
         contentView.insertSubview(shadow, belowSubview: view)
 
         // create constraints
-        let frontViewlayoutAttribs:[(NSLayoutAttribute, CGFloat)] =  [(NSLayoutAttribute.width, 0.8), (NSLayoutAttribute.height, 0.9)]
-        
-        for info: (attribute: NSLayoutAttribute, scale: CGFloat) in frontViewlayoutAttribs {
+        let sizeConstaints: [(NSLayoutAttribute, CGFloat)] = [(NSLayoutAttribute.width, 0.8), (NSLayoutAttribute.height, 0.9)]
+        for info: (attribute: NSLayoutAttribute, scale: CGFloat) in sizeConstaints {
             if let frontViewConstraint = view.getConstraint(info.attribute) {
                 shadow >>>- {
                     $0.attribute = info.attribute
@@ -188,9 +187,8 @@ extension BasePageCollectionCell {
             }
         }
         
-        let contentViewlayoutAttribs:[(NSLayoutAttribute, CGFloat)] =  [(NSLayoutAttribute.centerX, 0), (NSLayoutAttribute.centerY, 30)]
-        
-        for info: (attribute: NSLayoutAttribute, offset: CGFloat) in contentViewlayoutAttribs {
+        let centerConstraints: [(NSLayoutAttribute, CGFloat)] = [(NSLayoutAttribute.centerX, 0), (NSLayoutAttribute.centerY, 30)]
+        for info: (attribute: NSLayoutAttribute, offset: CGFloat) in centerConstraints {
             (contentView, shadow, view) >>>- {
                 $0.attribute = info.attribute
                 $0.constant = info.offset
