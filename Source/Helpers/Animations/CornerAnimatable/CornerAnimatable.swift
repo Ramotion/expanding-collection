@@ -18,7 +18,7 @@ extension CornerAnimatable where Self: UIView {
         let animation = Init(CABasicAnimation(keyPath: "cornerRadius")) {
             $0.duration = duration
             $0.toValue = radius
-            $0.fillMode = kCAFillModeForwards
+            $0.fillMode = CAMediaTimingFillMode.forwards
             $0.isRemovedOnCompletion = false
         }
 

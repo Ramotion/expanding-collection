@@ -71,7 +71,7 @@ extension TransitionDriver {
         copyView.center = view.center
 
         // constraints animation
-        UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions(), animations: {
             self.view.layoutIfNeeded()
             self.backImageView?.alpha = 1
             self.copyCell?.shadowView?.alpha = 0
@@ -101,7 +101,7 @@ extension TransitionDriver {
         copyCell.backContainerView.animationCornerRadius(copyCell.backContainerView.layer.cornerRadius, duration: duration)
         copyCell.frontContainerView.animationCornerRadius(copyCell.frontContainerView.layer.cornerRadius, duration: duration)
 
-        UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions(), animations: {
             self.rightCell?.center.x -= self.step
             self.leftCell?.center.x += self.step
 
@@ -132,7 +132,10 @@ extension TransitionDriver {
         view.addSubview(cell)
 
         // add constraints
-        [(NSLayoutAttribute.width, cell.bounds.size.width), (NSLayoutAttribute.height, cell.bounds.size.height)].forEach { info in
+        [
+            (NSLayoutConstraint.Attribute.width, cell.bounds.size.width),
+            (NSLayoutConstraint.Attribute.height, cell.bounds.size.height)
+        ].forEach { info in
             cell >>>- {
                 $0.attribute = info.0
                 $0.constant = info.1
@@ -140,7 +143,7 @@ extension TransitionDriver {
             }
         }
 
-        [NSLayoutAttribute.centerX, .centerY].forEach { attribute in
+        [NSLayoutConstraint.Attribute.centerX, .centerY].forEach { attribute in
             (view, cell) >>>- {
                 $0.attribute = attribute
                 return
@@ -159,7 +162,7 @@ extension TransitionDriver {
         view.addSubview(imageView)
 
         // add constraints
-        [NSLayoutAttribute.left, .right, .top, .bottom].forEach { attribute in
+        [NSLayoutConstraint.Attribute.left, .right, .top, .bottom].forEach { attribute in
             (view, imageView) >>>- {
                 $0.attribute = attribute
                 return
