@@ -135,7 +135,7 @@ extension BasePageCollectionCell {
         isOpened = isOpen
 
         if animated == true {
-            UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions(), animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions(), animations: {
                 self.contentView.layoutIfNeeded()
             }, completion: nil)
         } else {
@@ -176,8 +176,11 @@ extension BasePageCollectionCell {
         contentView.insertSubview(shadow, belowSubview: view)
 
         // create constraints
-        let sizeConstaints: [(NSLayoutAttribute, CGFloat)] = [(NSLayoutAttribute.width, 0.8), (NSLayoutAttribute.height, 0.9)]
-        for info: (attribute: NSLayoutAttribute, scale: CGFloat) in sizeConstaints {
+        let sizeConstaints: [(NSLayoutConstraint.Attribute, CGFloat)] = [
+            (NSLayoutConstraint.Attribute.width, 0.8),
+            (NSLayoutConstraint.Attribute.height, 0.9)
+        ]
+        for info: (attribute: NSLayoutConstraint.Attribute, scale: CGFloat) in sizeConstaints {
             if let frontViewConstraint = view.getConstraint(info.attribute) {
                 shadow >>>- {
                     $0.attribute = info.attribute
@@ -187,8 +190,11 @@ extension BasePageCollectionCell {
             }
         }
         
-        let centerConstraints: [(NSLayoutAttribute, CGFloat)] = [(NSLayoutAttribute.centerX, 0), (NSLayoutAttribute.centerY, 30)]
-        for info: (attribute: NSLayoutAttribute, offset: CGFloat) in centerConstraints {
+        let centerConstraints: [(NSLayoutConstraint.Attribute, CGFloat)] = [
+            (NSLayoutConstraint.Attribute.centerX, 0),
+            (NSLayoutConstraint.Attribute.centerY, 30)
+        ]
+        for info: (attribute: NSLayoutConstraint.Attribute, offset: CGFloat) in centerConstraints {
             (contentView, shadow, view) >>>- {
                 $0.attribute = info.attribute
                 $0.constant = info.offset
@@ -200,7 +206,8 @@ extension BasePageCollectionCell {
         let width = shadow.getConstraint(.width)?.constant
         let height = shadow.getConstraint(.height)?.constant
 
-        shadow.layer.shadowPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: width!, height: height!), cornerRadius: 0).cgPath
+        shadow.layer.shadowPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: width!, height: height!),
+                                               cornerRadius: 0).cgPath
 
         return shadow
     }
