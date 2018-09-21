@@ -66,7 +66,7 @@ extension AnimatingBarButton {
 
     fileprivate func configureImageView(_ imageView: UIImageView, imageName: String) {
         guard let customView = customView else { return }
-        guard let image = UIImage(named: imageName)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate) else { return }
+        guard let image = UIImage(named: imageName)?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate) else { return }
 
         imageView.image = image
         imageView.contentMode = .scaleAspectFit

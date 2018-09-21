@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureNavigationTabBar()
         return true
     }
@@ -32,8 +32,8 @@ extension AppDelegate {
         shadow.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
 
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.white,
-            NSAttributedStringKey.shadow: shadow,
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.shadow: shadow,
         ]
     }
 }

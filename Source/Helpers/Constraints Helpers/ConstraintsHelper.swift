@@ -9,11 +9,11 @@
 import UIKit
 
 struct ConstraintInfo {
-    var attribute: NSLayoutAttribute = .left
-    var secondAttribute: NSLayoutAttribute = .notAnAttribute
+    var attribute: NSLayoutConstraint.Attribute = .left
+    var secondAttribute: NSLayoutConstraint.Attribute = .notAnAttribute
     var constant: CGFloat = 0
     var identifier: String?
-    var relation: NSLayoutRelation = .equal
+    var relation: NSLayoutConstraint.Relation = .equal
 }
 
 precedencegroup ConstOp {
@@ -81,7 +81,7 @@ func >>>- <T: UIView>(left: (T, T, T), block: (inout ConstraintInfo) -> Void) ->
 extension UIView {
 
     func addScaleToFillConstratinsOnView(_ view: UIView) {
-        [NSLayoutAttribute.left, .right, .top, .bottom].forEach { attribute in
+        [NSLayoutConstraint.Attribute.left, .right, .top, .bottom].forEach { attribute in
             (self, view) >>>- {
                 $0.attribute = attribute
                 return
@@ -89,7 +89,7 @@ extension UIView {
         }
     }
 
-    func getConstraint(_ attributes: NSLayoutAttribute) -> NSLayoutConstraint? {
+    func getConstraint(_ attributes: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
         return constraints.filter {
             if $0.firstAttribute == attributes && $0.secondItem == nil {
                 return true

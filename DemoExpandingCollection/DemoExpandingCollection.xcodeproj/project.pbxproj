@@ -446,12 +446,12 @@
 					848596271CF585F3000BCC74 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 34MUF9YXTA;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 					};
 					8499D8131D001B82004B5B37 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = LEAZS7L33U;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -689,8 +689,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -708,8 +707,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -730,8 +728,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -755,8 +752,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

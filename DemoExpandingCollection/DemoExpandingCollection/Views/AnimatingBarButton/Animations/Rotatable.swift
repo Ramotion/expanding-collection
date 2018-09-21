@@ -35,7 +35,7 @@ extension Rotatable {
             $0.duration = duration
             $0.fromValue = from
             $0.toValue = to
-            $0.fillMode = kCAFillModeForwards
+            $0.fillMode = CAMediaTimingFillMode.forwards
             $0.isRemovedOnCompletion = false
         }
     }
